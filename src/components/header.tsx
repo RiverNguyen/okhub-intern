@@ -49,7 +49,7 @@ const Header = () => {
 
   return (
     <div className="flex justify-between items-center relative z-50">
-      <Image src={"/logo.svg"} width={154} height={51} alt="logo" />
+      <Image src={"/images/logo.png"} width={154} height={51} alt="logo" />
       <div className="relative">
         <Sheet>
           <SheetTrigger asChild>

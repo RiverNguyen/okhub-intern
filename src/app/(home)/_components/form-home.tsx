@@ -31,7 +31,7 @@ const formSchema = z.object({
   localDriving: z.number(),
 });
 
-const FormHome = () => {
+export const FormHome = () => {
   const [selfDriving, setSelfDriving] = useState(0);
   const [localDriving, setLocalDriving] = useState(0);
 
@@ -213,5 +213,3 @@ const FormHome = () => {
     </Form>
   );
 };
-
-export default FormHome;
