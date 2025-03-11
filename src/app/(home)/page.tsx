@@ -3,6 +3,8 @@ import Image from "next/image";
 import { Banner } from "./_components/banner";
 import { Trip } from "./_components/trip";
 import { FormHome } from "./_components/form-home";
+import Gallery from "./_components/gallery";
+import Client from "./_components/client";
 
 const HomePage = () => {
   return (
@@ -40,6 +42,8 @@ const HomePage = () => {
       <div className="px-[5rem]">
         <Trip />
       </div>
+      <Gallery />
+      <Client />
     </>
   );
 };

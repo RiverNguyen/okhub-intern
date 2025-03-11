@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import { londrinaSolid } from "../../../../public/fonts/font-family";
+import { londrinaSolid } from "@/configs/font-family";
 
 export const Trip = () => {
   return (
@@ -24,9 +24,8 @@ export const Trip = () => {
         {Array.from({ length: 5 }).map((_, index) => (
           <div
             key={index}
-            className={`bg-[url(/images/trip-${
-              index + 1
-            }.png)] w-[47.3125rem] h-[34.375rem] bg-no-repeat rounded-[1.5rem] bg-contain relative`}
+            className={`w-[47.3125rem] h-[34.375rem] bg-no-repeat rounded-[1.5rem] bg-contain relative`}
+            style={{ backgroundImage: `url(/images/trip-${index + 1}.png)` }}
           >
             <div className="w-full bg-[linear-gradient(180deg,rgba(18,39,24,0.00)_10%,#122718_100%)] absolute top-0 right-0 bottom-0 left-0 rounded-[1.5rem]"></div>
             <div className="absolute bottom-[1.5rem] left-[1.5rem] text-white">

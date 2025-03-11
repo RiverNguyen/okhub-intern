@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { tripsans } from "../../public/fonts/font-family";
+import { tripsans } from "../configs/font-family";
 
 export const metadata: Metadata = {
   title: "Hong Hao Travel",

@@ -9,24 +9,24 @@ export const londrinaSolid = Londrina_Solid({
 export const tripsans = localFont({
   src: [
     {
-      path: "./trip-sans.otf",
+      path: "../fonts/trip-sans.otf",
       weight: "400",
       style: "normal",
     },
     {
-      path: "./trip-sans-medium.otf",
+      path: "../fonts/trip-sans-medium.otf",
       weight: "500",
       style: "medium",
     },
     {
-      path: "./trip-sans-bold.otf",
+      path: "../fonts/trip-sans-bold.otf",
       weight: "600",
       style: "bold",
     },
     {
-      path: "./trip-sans-ultra.otf",
+      path: "../fonts/trip-sans-ultra.otf",
       weight: "700",
-      style: "ultra",
+      style: "black",
     },
   ],
 });
@@ -34,7 +34,7 @@ export const tripsans = localFont({
 export const havana = localFont({
   src: [
     {
-      path: "./havana-sunset-script.ttf",
+      path: "../fonts/havana-sunset-script.ttf",
       weight: "400",
       style: "normal",
     },

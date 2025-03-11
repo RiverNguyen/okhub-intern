@@ -1,6 +1,6 @@
 import { Check, MoveRight } from "lucide-react";
 import Image from "next/image";
-import { havana, londrinaSolid } from "../../../../public/fonts/font-family";
+import { havana, londrinaSolid } from "@/configs/font-family";
 
 export const Banner = () => {
   const about = [
