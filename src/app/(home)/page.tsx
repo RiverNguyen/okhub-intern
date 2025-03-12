@@ -5,12 +5,16 @@ import { Trip } from "./_components/trip";
 import { FormHome } from "./_components/form-home";
 import Gallery from "./_components/gallery";
 import Client from "./_components/client";
+import Weather from "./_components/weather";
+import Footer from "@/components/footer";
+import FixedButton from "@/components/fixed-button";
 
 const HomePage = () => {
   return (
     <>
+      <FixedButton />
+      <Header />
       <div className="px-[5rem] py-[1.5rem] h-[49.25rem] bg-[url(/images/sheet-bg.png)] bg-cover bg-no-repeat relative z-10">
-        <Header />
         <div className="bg-[#0F492B]/90 absolute top-0 right-0 bottom-0 left-0 z-20" />
         <span className="text-white rotate-90 absolute left-0 top-1/2 -translate-y-1/2 text-center z-30 text-[0.75rem] font-extrabold">
           Hong Hoa Travel
@@ -44,6 +48,8 @@ const HomePage = () => {
       </div>
       <Gallery />
       <Client />
+      <Weather />
+      <Footer />
     </>
   );
 };

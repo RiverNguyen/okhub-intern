@@ -1,9 +1,14 @@
 import localFont from "next/font/local";
-import { Londrina_Solid } from "next/font/google";
+import { Londrina_Solid, Poppins } from "next/font/google";
 
 export const londrinaSolid = Londrina_Solid({
   subsets: ["latin"],
   weight: ["400", "900"],
+});
+
+export const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const tripsans = localFont({

@@ -148,3 +148,41 @@
 html {
   font-size: 1vw;
 }
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e64827;
+  border-radius: 10px;
+}
+
+@keyframes float {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(20px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 5s infinite ease-in-out;
+  }
+}
+
+html > body[data-scroll-locked] {
+  overflow: auto !important;
+  --removed-body-scroll-bar-size: 0px;
+  margin-right: 0 !important;
+}

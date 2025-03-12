@@ -218,7 +218,7 @@ const Client = () => {
           </div>
         </div>
       </div>
-      <div className="bg-[url(/images/bg-client-1.png)] h-[75.5625rem] w-full bg-no-repeat bg-cover relative pl-[5rem]">
+      <div className="bg-[url(/images/bg-client-1.png)] pb-[8rem] w-full bg-no-repeat bg-cover relative pl-[5rem]">
         <div
           className="absolute top-0 bottom-0 right-0 left-0"
           style={{

@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import {
@@ -10,95 +12,106 @@ import {
 import { MenuIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const Header = () => {
+  const [isSticky, setIsSticky] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [hasBg, setHasBg] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > 100 && currentScrollY > lastScrollY) {
+        setIsSticky(false);
+      } else {
+        setIsSticky(true);
+      }
+
+      setHasBg(currentScrollY > 100);
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
+
   const linkMenu = [
-    {
-      name: "Home",
-      href: "/",
-    },
-    {
-      name: "About Us",
-      href: "/about",
-    },
-    {
-      name: "Tour",
-      href: "/tour",
-    },
-    {
-      name: "Activity",
-      href: "/activity",
-    },
-    {
-      name: "Destination",
-      href: "/destination",
-    },
-    {
-      name: "Blog",
-      href: "/blog",
-    },
-    {
-      name: "FAQ",
-      href: "/faq",
-    },
-    {
-      name: "Contact",
-      href: "/contact",
-    },
+    { name: "Home", href: "/" },
+    { name: "About Us", href: "/about" },
+    { name: "Tour", href: "/tour" },
+    { name: "Activity", href: "/activity" },
+    { name: "Destination", href: "/destination" },
+    { name: "Blog", href: "/blog" },
+    { name: "FAQ", href: "/faq" },
+    { name: "Contact", href: "/contact" },
   ];
 
   return (
-    <div className="flex justify-between items-center relative z-50">
-      <Image src={"/images/logo.png"} width={154} height={51} alt="logo" />
-      <div className="relative">
-        <Sheet>
-          <SheetTrigger asChild>
-            <Button className="bg-[#E64827] h-auto w-auto rounded-full p-[0.5rem] font-extrabold text-[1.25rem] hover:bg-[#E64827] hover:cursor-pointer">
-              <MenuIcon />
-              MENU
-            </Button>
-          </SheetTrigger>
-          <SheetContent
-            side="top"
-            className="bg-[#0F492B] border-none rounded-bl-4xl rounded-br-4xl pb-[3.81rem] pl-[5rem] bg-[url(/sheet-bg.png)] bg-no-repeat bg-cover"
-          >
-            <SheetHeader>
-              <SheetTitle>
-                <Image
-                  src={"/logo.svg"}
-                  className="pt-[2rem]"
-                  width={154}
-                  height={51}
-                  alt="logo"
-                />
-              </SheetTitle>
-            </SheetHeader>
-            <div className="mt-[4.44rem] w-[23rem]">
-              {linkMenu.map((item) => (
-                <div key={item.href} className="flex flex-col gap-y-[0.5rem]">
-                  <div>
-                    <Link
-                      className="text-white text-[2rem] font-bold"
-                      href={item.href}
-                    >
-                      {item.name}
-                    </Link>
-                    <Separator className="mt-[0.5rem] opacity-20 w-[40.125rem]" />
+    <header
+      className={`fixed z-[60] top-0 left-0 w-full transition-all px-[5rem] duration-300  ${
+        isSticky ? "translate-y-0" : "-translate-y-full"
+      } ${hasBg ? "bg-white shadow-md" : "bg-transparent"}`}
+    >
+      <div className="flex justify-between items-center relative z-50 transition-all duration-300 py-[1rem]">
+        <Image
+          src={hasBg ? "/black-logo.svg" : "/white-logo.svg"}
+          width={154}
+          height={51}
+          alt="logo"
+        />
+        <div className="relative">
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button className="bg-[#E64827] h-auto w-auto rounded-full p-[0.5rem] font-extrabold text-[1.25rem] hover:bg-[#E64827]">
+                <MenuIcon />
+                MENU
+              </Button>
+            </SheetTrigger>
+            <SheetContent
+              side="top"
+              className="bg-[#0F492B] border-none rounded-bl-4xl rounded-br-4xl pb-[3.81rem] pl-[5rem] bg-[url(/sheet-bg.png)] bg-no-repeat bg-cover"
+            >
+              <SheetHeader>
+                <SheetTitle>
+                  <Image
+                    src={"/logo.svg"}
+                    className="pt-[2rem]"
+                    width={154}
+                    height={51}
+                    alt="logo"
+                  />
+                </SheetTitle>
+              </SheetHeader>
+              <div className="mt-[4.44rem] w-[23rem]">
+                {linkMenu.map((item) => (
+                  <div key={item.href} className="flex flex-col gap-y-[0.5rem]">
+                    <div>
+                      <Link
+                        className="text-white text-[2rem] font-bold"
+                        href={item.href}
+                      >
+                        {item.name}
+                      </Link>
+                      <Separator className="mt-[0.5rem] opacity-20 w-[40.125rem]" />
+                    </div>
                   </div>
-                </div>
-              ))}
-            </div>
-            <Image
-              src={"/images/sheet-bg.png"}
-              alt="sheet"
-              width={819}
-              height={612}
-              className="absolute top-0 bottom-0 right-0 h-full w-[52rem] rounded-br-4xl"
-            />
-          </SheetContent>
-        </Sheet>
+                ))}
+              </div>
+              <Image
+                src={"/images/sheet-bg.png"}
+                alt="sheet"
+                width={819}
+                height={612}
+                className="absolute top-0 bottom-0 right-0 h-full w-[52rem] rounded-br-4xl"
+              />
+            </SheetContent>
+          </Sheet>
+        </div>
       </div>
-    </div>
+    </header>
   );
 };
 
