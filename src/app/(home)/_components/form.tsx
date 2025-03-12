@@ -471,7 +471,7 @@ export default function MyForm() {
               />
             </div>
           </div>
-          {/* <Button type="submit">Submit</Button> */}
+          <Button type="submit">Submit</Button>
         </form>
         <div className="flex flex-col gap-[0.75rem] mt-[1rem]">
           <div className="flex justify-between items-center">

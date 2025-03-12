@@ -1,3 +1,5 @@
+"use client";
+
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
@@ -14,11 +16,12 @@ import {
 } from "@/components/ui/tabs";
 import { Dot } from "lucide-react";
 import Image from "next/image";
+import Autoplay from "embla-carousel-autoplay";
 
 const TabCarousel = () => {
   return (
     <div>
-      <Tabs defaultValue="account" className="bg-none">
+      <Tabs defaultValue="tour" className="bg-none">
         <TabsList className="bg-transparent flex gap-x-[2.25rem] ml-auto pr-[5rem] mb-[2rem]">
           <TabsTriggerCustom
             className="focus-visible:ring-0 focus-visible:outline-0"
@@ -33,6 +36,11 @@ const TabCarousel = () => {
             opts={{
               align: "start",
             }}
+            plugins={[
+              Autoplay({
+                delay: 5000,
+              }),
+            ]}
             className="w-full max-w-screen-lg ml-auto relative"
           >
             <CarouselContent>
@@ -42,16 +50,16 @@ const TabCarousel = () => {
                   className="basis-[29%] w-[17.6875rem] h-[28.5rem]"
                 >
                   <div className="p-1">
-                    <Card className="p-0 rounded-[1.5rem]">
+                    <Card className="p-0 rounded-[1.5rem] relative group overflow-hidden">
                       <CardContent className="p-0">
                         <Image
                           src={"/images/tour.png"}
                           alt="tour"
                           width={300}
                           height={400}
-                          className="object-cover w-full rounded-[1.5rem]"
+                          className="object-cover w-full rounded-[1.5rem] group-hover:-translate-y-1/5 transition-transform duration-700"
                         />
-                        <div className="py-[0.69rem] text-center">
+                        <div className="py-[0.69rem] text-center group-hover:-translate-y-[5rem] transition-transform duration-700">
                           <p className="text-[1rem] text-[#E64827] font-bold">
                             Mr. Thanh Nguyen
                           </p>
@@ -59,6 +67,12 @@ const TabCarousel = () => {
                             Tour Leader <Dot />3 years EXP
                           </p>
                         </div>
+                        <p className="text-[0.75rem] text-[#828282] text-center absolute w-full px-[1rem] transition-transform duration-700 group-hover:-translate-y-[5.3rem] ">
+                          “As a tour guide, my greatest joy is witnessing the
+                          wonder and awe on travelers&apos; faces as they
+                          discover the hidden gems and cultural treasures of our
+                          destination.”
+                        </p>
                       </CardContent>
                     </Card>
                   </div>
