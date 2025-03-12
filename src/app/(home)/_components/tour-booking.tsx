@@ -113,7 +113,11 @@ const TourBooking = () => {
         </div>
       </div>
       <div className="flex uppercase justify-between gap-[0.5rem]">
-        <button className="w-full flex py-[1rem] px-[2rem] bg-[#E64827] text-white text-[0.875rem] font-bold rounded-[0.5rem] items-center justify-center gap-[0.5rem] group">
+        <button
+          form="bookForm"
+          type="submit"
+          className="w-full flex py-[1rem] px-[2rem] bg-[#E64827] text-white text-[0.875rem] font-bold rounded-[0.5rem] items-center justify-center gap-[0.5rem] group"
+        >
           BOOK NOW, Pay later{" "}
           <MoveRight className="group-hover:translate-x-1 transform duration-300" />
         </button>

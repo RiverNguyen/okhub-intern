@@ -1,9 +1,19 @@
+"use client";
+
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { londrinaSolid } from "@/configs/font-family";
 import { MoveRight, Star } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import TabCarousel from "./tab-carousel";
+
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
+import Fade from "embla-carousel-fade";
 
 const Client = () => {
   return (
@@ -31,13 +41,29 @@ const Client = () => {
                 height={502}
                 className="absolute"
               />
-              <Image
-                src="/images/client-1.png"
-                alt="client"
-                width={468}
-                height={468}
-                className="absolute"
-              />
+
+              <Carousel
+                plugins={[
+                  Autoplay({
+                    delay: 3000,
+                  }),
+                  Fade(),
+                ]}
+                className="absolute left-[3.5rem]"
+              >
+                <CarouselContent>
+                  {Array.from({ length: 4 }).map((_, index) => (
+                    <CarouselItem key={index}>
+                      <Image
+                        src={`/images/client-${index + 1}.png`}
+                        alt="client"
+                        width={468}
+                        height={468}
+                      />
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+              </Carousel>
               <Image
                 src="/pin.svg"
                 width={23.4}

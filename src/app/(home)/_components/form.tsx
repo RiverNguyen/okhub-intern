@@ -41,23 +41,36 @@ import { useState } from "react";
 import { poppins } from "@/configs/font-family";
 
 const formSchema = z.object({
-  name: z.string().min(1),
-  phone: z.string().min(1),
-  email: z.string(),
+  name: z.string().min(1, {
+    message: "Name is required",
+  }),
+  phone: z.string().min(1, {
+    message: "Phone is required",
+  }),
+  email: z.string().email({
+    message: "Invalid email",
+  }),
   message: z.string(),
-  typeOfTour: z.string(),
-  days: z.string(),
-  pickup: z.string(),
+  typeOfTour: z.enum(["Best Budget", "Premium", "Standard"]),
+  days: z.enum(["2 Days 3 Nights", "3 Days 4 Nights", "4 Days 5 Nights"]),
+  pickup: z.enum(["Ha Noi", "Sa Pa", "Ninh Binh"]),
   departureDate: z.coerce.date(),
-  addressPick: z.string().min(1),
-  dropOff: z.string(),
+  addressPick: z.string().min(1, {
+    message: "Address is required",
+  }),
+  dropOff: z.enum(["Ha Noi", "Ninh Binh", "Cat Ba", "Ha Long"]),
   endDate: z.coerce.date(),
-  addressDropOff: z.string().min(1),
+  addressDropOff: z.string().min(1, {
+    message: "Address is required",
+  }),
+  pax1: z.number().optional(),
+  pax2: z.number().optional(),
 });
 
 export default function MyForm() {
   const [animate] = useAutoAnimate();
   const [selfDriving, setSelfDriving] = useState(0);
+  const [localDriving, setLocalDriving] = useState(0);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -66,14 +79,16 @@ export default function MyForm() {
       phone: "",
       email: "",
       message: "",
-      typeOfTour: "",
-      days: "",
-      pickup: "",
+      typeOfTour: "Best Budget",
+      days: "2 Days 3 Nights",
+      pickup: "Ha Noi",
       addressPick: "",
-      dropOff: "",
+      dropOff: "Ha Noi",
       addressDropOff: "",
       departureDate: new Date(),
       endDate: new Date(),
+      pax1: 0,
+      pax2: 0,
     },
   });
 
@@ -94,13 +109,18 @@ export default function MyForm() {
   return (
     <>
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} ref={animate}>
+        <form
+          onSubmit={form.handleSubmit(onSubmit)}
+          ref={animate}
+          id="bookForm"
+        >
           <div className="flex flex-col pb-[1rem] mt-[0.5rem]">
             <FormField
               control={form.control}
               name="name"
               render={({ field }) => (
                 <FormItem>
+                  <FormLabel></FormLabel>
                   <FormControl>
                     <Input
                       className="focus-visible:border-[#E64827] focus-visible:ring-[#E64827] focus-visible:ring-[0.0825rem]"
@@ -123,6 +143,7 @@ export default function MyForm() {
                   name="phone"
                   render={({ field }) => (
                     <FormItem>
+                      <FormLabel></FormLabel>
                       <FormControl>
                         <Input
                           className="focus-visible:border-[#E64827] focus-visible:ring-[#E64827] focus-visible:ring-[0.0825rem]"
@@ -145,6 +166,7 @@ export default function MyForm() {
                   name="email"
                   render={({ field }) => (
                     <FormItem>
+                      <FormLabel></FormLabel>
                       <FormControl>
                         <Input
                           className="focus-visible:border-[#E64827] focus-visible:ring-[#E64827] focus-visible:ring-[0.0825rem]"
@@ -167,6 +189,7 @@ export default function MyForm() {
               name="message"
               render={({ field }) => (
                 <FormItem>
+                  <FormLabel></FormLabel>
                   <FormControl>
                     <Textarea
                       placeholder="Message *"
@@ -196,19 +219,13 @@ export default function MyForm() {
                     >
                       <FormControl>
                         <SelectTrigger className="w-full">
-                          <SelectValue placeholder="Choose type tour" />
+                          <SelectValue placeholder="Best Budget" />
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>
-                        <SelectItem value="m@example.com">
-                          m@example.com
-                        </SelectItem>
-                        <SelectItem value="m@google.com">
-                          m@google.com
-                        </SelectItem>
-                        <SelectItem value="m@support.com">
-                          m@support.com
-                        </SelectItem>
+                        <SelectItem value="Best Budget">Best Budget</SelectItem>
+                        <SelectItem value="Premium">Premium</SelectItem>
+                        <SelectItem value="Standard">Standard</SelectItem>
                       </SelectContent>
                     </Select>
                     <div ref={animate}>
@@ -236,14 +253,14 @@ export default function MyForm() {
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>
-                        <SelectItem value="m@example.com">
-                          m@example.com
+                        <SelectItem value="2 Days 3 Nights">
+                          2 Days 3 Nights
                         </SelectItem>
-                        <SelectItem value="m@google.com">
-                          m@google.com
+                        <SelectItem value="3 Days 4 Nights">
+                          3 Days 4 Nights
                         </SelectItem>
-                        <SelectItem value="m@support.com">
-                          m@support.com
+                        <SelectItem value="4 Days 5 Nights">
+                          4 Days 5 Nights
                         </SelectItem>
                       </SelectContent>
                     </Select>
@@ -270,7 +287,7 @@ export default function MyForm() {
                     >
                       <FormControl>
                         <SelectTrigger className="w-full">
-                          <SelectValue placeholder="Ha Noi" />
+                          <SelectValue placeholder="Pick Up" />
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent className="w-[15rem]">
@@ -378,7 +395,7 @@ export default function MyForm() {
                     >
                       <FormControl>
                         <SelectTrigger className="w-full">
-                          <SelectValue placeholder="Ha Noi" />
+                          <SelectValue placeholder="Drop Off" />
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent className="w-[15rem]">
@@ -471,7 +488,6 @@ export default function MyForm() {
               />
             </div>
           </div>
-          <Button type="submit">Submit</Button>
         </form>
         <div className="flex flex-col gap-[0.75rem] mt-[1rem]">
           <div className="flex justify-between items-center">
@@ -489,7 +505,7 @@ export default function MyForm() {
               />
               <FormField
                 control={form.control}
-                name="name"
+                name="pax1"
                 render={({ field }) => (
                   <FormItem className="gap-0 w-[6rem] relative">
                     <FormControl>
@@ -547,7 +563,7 @@ export default function MyForm() {
               />
               <FormField
                 control={form.control}
-                name="name"
+                name="pax2"
                 render={({ field }) => (
                   <FormItem className="gap-0 w-[6rem] relative">
                     <FormControl>
@@ -556,7 +572,7 @@ export default function MyForm() {
                         {...field}
                         className="text-right pr-[1.3rem] text-[#DA4B19] text-[0.875rem] font-bold border-none shadow-none bg-[#F1F1F1]"
                         readOnly
-                        value={selfDriving}
+                        value={localDriving}
                       />
                     </FormControl>
                     <div className="absolute right-0 left-0 top-1/2 -translate-y-1/2 flex justify-between items-center px-[0.75rem]">
@@ -564,15 +580,15 @@ export default function MyForm() {
                       <div className="flex flex-col gap-y-[0.75rem]">
                         <button
                           className="hover:bg-transparent hover:cursor-pointer"
-                          onClick={() => setSelfDriving((prev) => prev + 1)}
+                          onClick={() => setLocalDriving((prev) => prev + 1)}
                         >
                           <ChevronUpIcon className="size-[1.2rem] hover:text-[#DA4B19] duration-300 transform font-bold" />
                         </button>
                         <button
                           className="hover:bg-transparent hover:cursor-pointer -mt-[1.3rem]"
                           onClick={() => {
-                            if (selfDriving > 0) {
-                              setSelfDriving((prev) => prev - 1);
+                            if (localDriving > 0) {
+                              setLocalDriving((prev) => prev - 1);
                             }
                           }}
                         >
