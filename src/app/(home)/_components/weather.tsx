@@ -46,8 +46,8 @@ const Weather = () => {
               key={index}
               src={`/cloud-${(index % 2) + 2}.svg`}
               alt={`cloud-${index + 1}`}
-              width={500}
-              height={300}
+              width={1000}
+              height={800}
               className={`absolute ${
                 index === 0 ? "animate-none" : "animate-float"
               }`}

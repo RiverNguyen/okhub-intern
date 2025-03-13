@@ -7,6 +7,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { havana, londrinaSolid } from "@/configs/font-family";
 import Mountain from "./mountain";
+import Motorbike from "./motorbike";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -78,19 +79,24 @@ export const Banner = () => {
             organizing unforgettable tours to explore Ha Giang loop but still
             focus on the pristine nature of nature.
           </p>
-          <div className="flex gap-x-[2.5rem] justify-center items-center uppercase">
+          <div className="flex gap-x-[2.5rem] justify-center items-center uppercase relative z-30">
             {about.map((item, index) => (
               <div
                 key={index}
-                className="relative size-[12.5rem] flex justify-center items-center"
+                className="relative size-[12.5rem] flex justify-center items-center group hover:bg-[#DA4B19] hover:cursor-pointer rounded-full transform duration-500 ease-in-out hover:scale-110"
               >
                 <div
-                  className="absolute inset-0 border border-dashed rounded-full animate-spin"
+                  className="absolute inset-0 border border-dashed rounded-full animate-spin "
                   style={{ animationDuration: "2s" }}
                 ></div>
-                <p className="relative text-center w-[6.88rem] text-[0.875rem] font-bold">
-                  {item.text}
-                </p>
+                <div className="relative flex-col h-[2rem] w-full flex justify-center items-center overflow-hidden">
+                  <p className="absolute text-center w-[6.88rem] text-[0.875rem] font-bold transition-transform duration-300 group-hover:-translate-y-10">
+                    {item.text}
+                  </p>
+                  <p className="absolute text-center w-[6.88rem] text-[0.875rem] font-bold translate-y-10 transition-transform duration-300 group-hover:translate-y-0">
+                    {item.text}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
@@ -107,6 +113,7 @@ export const Banner = () => {
             height={49}
             className="rotate-180"
           />
+          <Motorbike />
         </div>
         <div className="mt-[3.5rem] flex justify-between px-[5rem]">
           <div>
@@ -178,7 +185,7 @@ export const Banner = () => {
           loop
           playsInline
           muted
-          className="transition-transform duration-1000 ease-out -mt-[28rem] rounded-[1.5rem]"
+          className="transition-transform duration-1000 ease-out -mt-[28rem] rounded-tl-[1.5rem] rounded-tr-[1.5rem]"
         ></video>
       </div>
     </div>
