@@ -20,6 +20,7 @@ export const Banner = () => {
   ];
 
   const videoRef = useRef<HTMLVideoElement>(null);
+  const mountainRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (videoRef.current) {
@@ -41,13 +42,33 @@ export const Banner = () => {
     }
   }, []);
 
+  useEffect(() => {
+    if (mountainRef.current) {
+      gsap.fromTo(
+        mountainRef.current,
+        { x: 300, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 3,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: mountainRef.current,
+            start: "top 80%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    }
+  }, []);
+
   return (
     <div className="h-[161.3rem] relative z-50">
       <div className="w-full absolute -top-[5.25rem] h-[9.25rem] ">
         <Image src={"/mountain.svg"} alt="mountain" fill />
       </div>
 
-      <div className="w-full bg-[linear-gradient(180deg,#122718_50%,rgba(18,39,24,0.85)_70%,#122718_100%)] absolute top-0 right-0 bottom-0 left-0">
+      <div className="w-full bg-[linear-gradient(180deg,#122718_50%,rgba(18,39,24,0.85)_70%,#122718_100%)] absolute top-0 right-0 bottom-0 left-0 overflow-hidden">
         <div className="flex flex-col gap-y-[4rem] items-center justify-center px-[5rem] text-white">
           <Image src={"/logo-1.svg"} alt="logo-1" width={112} height={112} />
           <p
@@ -131,7 +152,9 @@ export const Banner = () => {
               </button>
             </div>
           </div>
-          <Mountain />
+          <div ref={mountainRef}>
+            <Mountain />
+          </div>
         </div>
         <div className="flex flex-col justify-center items-center relative z-30 mt-[10rem]">
           <p className="uppercase text-white/60 text-[1.125rem] font-bold leading-[1.125rem]">

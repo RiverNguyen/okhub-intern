@@ -72,7 +72,7 @@ const Header = () => {
             </SheetTrigger>
             <SheetContent
               side="top"
-              className="bg-[#0F492B] border-none rounded-bl-4xl rounded-br-4xl pb-[3.81rem] pl-[5rem] bg-[url(/sheet-bg.png)] bg-no-repeat bg-cover"
+              className="bg-[#0F492B] border-none rounded-bl-4xl rounded-br-4xl pb-[3.81rem] pl-[5rem] bg-[url(/sheet-bg.png)] bg-no-repeat bg-cover data-[state=closed]:duration-700 data-[state=open]:duration-700"
             >
               <SheetHeader>
                 <SheetTitle>
