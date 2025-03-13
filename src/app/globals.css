@@ -163,6 +163,15 @@ html {
   border-radius: 10px;
 }
 
+/* 639.98 */
+/* 4.267vw */
+
+@media screen and (max-width: 639.98px) {
+  html {
+    font-size: 4.267vw;
+  }
+}
+
 @keyframes float {
   0% {
     transform: translateX(0);

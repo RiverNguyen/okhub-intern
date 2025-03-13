@@ -51,7 +51,7 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed z-[60] top-0 left-0 w-full transition-all px-[5rem] duration-300  ${
+      className={`fixed z-[60] top-0 left-0 w-full transition-all md:px-[5rem] px-[1.25rem] duration-300  ${
         isSticky ? "translate-y-0" : "-translate-y-full"
       } ${hasBg ? "bg-white shadow-md" : "bg-transparent"}`}
     >
@@ -61,20 +61,21 @@ const Header = () => {
           width={154}
           height={51}
           alt="logo"
+          className="w-[7.1875rem] h-[2.5625rem] md:w-[9.625rem] md:h-[3.1875rem]"
         />
         <div className="relative">
           <Sheet>
             <SheetTrigger asChild>
-              <Button className="bg-[#E64827] h-auto w-auto rounded-full p-[0.5rem] font-extrabold text-[1.25rem] hover:bg-[#E64827]">
+              <Button className="bg-transparent md:bg-[#E64827] border md:border-none border-white h-auto w-auto rounded-full p-[0.5rem] font-extrabold text-[1.25rem] hover:bg-[#E64827]">
                 <MenuIcon />
                 MENU
               </Button>
             </SheetTrigger>
             <SheetContent
               side="top"
-              className="bg-[#0F492B] border-none rounded-bl-4xl rounded-br-4xl pb-[3.81rem] pl-[5rem] bg-[url(/sheet-bg.png)] bg-no-repeat bg-cover data-[state=closed]:duration-700 data-[state=open]:duration-700"
+              className="bg-[#0F492B] border-none rounded-bl-4xl rounded-br-4xl pb-[3.81rem] pl-[1.25rem] md:pl-[5rem] bg-[url(/sheet-bg.png)] bg-no-repeat bg-cover data-[state=closed]:duration-700 data-[state=open]:duration-700"
             >
-              <SheetHeader>
+              <SheetHeader className="p-0">
                 <SheetTitle>
                   <Image
                     src={"/logo.svg"}
@@ -105,7 +106,7 @@ const Header = () => {
                 alt="sheet"
                 width={819}
                 height={612}
-                className="absolute top-0 bottom-0 right-0 h-full w-[52rem] rounded-br-4xl"
+                className="absolute top-0 bottom-0 right-0 h-full w-[52rem] rounded-br-4xl hidden md:block"
               />
             </SheetContent>
           </Sheet>
