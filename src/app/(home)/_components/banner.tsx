@@ -8,6 +8,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { havana, londrinaSolid } from "@/configs/font-family";
 import Mountain from "./mountain";
 import Motorbike from "./motorbike";
+import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -22,6 +23,7 @@ export const Banner = () => {
 
   const videoRef = useRef<HTMLVideoElement>(null);
   const mountainRef = useRef<HTMLDivElement>(null);
+  const bigElementRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (videoRef.current) {
@@ -63,8 +65,25 @@ export const Banner = () => {
     }
   }, []);
 
+  useGSAP(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: bigElementRef.current,
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 1,
+      },
+    });
+
+    tl.fromTo(
+      bigElementRef.current,
+      { opacity: 1, y: 0 },
+      { opacity: 1, y: -800 }
+    );
+  }, []);
+
   return (
-    <div className="h-[161.3rem] relative z-50">
+    <div ref={bigElementRef} className="h-[160.3rem] relative z-50">
       <div className="w-full absolute -top-[5.25rem] h-[9.25rem] ">
         <Image src={"/mountain.svg"} alt="mountain" fill />
       </div>
@@ -113,7 +132,6 @@ export const Banner = () => {
             height={49}
             className="rotate-180"
           />
-          <Motorbike />
         </div>
         <div className="mt-[3.5rem] flex justify-between px-[5rem]">
           <div>
@@ -150,6 +168,7 @@ export const Banner = () => {
                 Creating job opportunities for the Vietnamese community
               </li>
             </ul>
+
             <div className="flex mt-[2rem] gap-x-[1rem]">
               <button className="px-[2rem] py-[1rem] flex justify-center items-center text-white bg-[#DA4B19] rounded-[0.5rem] uppercase text-[0.875rem] font-bold hover:cursor-pointer">
                 Book Now <MoveRight className="ml-[0.5rem]" />
@@ -159,6 +178,8 @@ export const Banner = () => {
               </button>
             </div>
           </div>
+          <Motorbike />
+
           <div ref={mountainRef}>
             <Mountain />
           </div>

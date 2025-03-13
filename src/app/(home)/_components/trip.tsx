@@ -28,7 +28,7 @@ export const Trip = () => {
   }, []);
 
   return (
-    <div className="flex justify-between mt-[3.31rem]">
+    <div className="flex justify-between -mt-[30rem]">
       <div className="mt-[2rem] sticky top-[5rem] h-fit">
         <p className="text-[1.125rem] font-bold text-[#262626]/60">EXPLORE</p>
         <h3
@@ -36,6 +36,7 @@ export const Trip = () => {
         >
           BEST TRIPS FOR YOU
         </h3>
+        mt-[3.31rem]
         <Image
           src={currentImage}
           alt="tour"
