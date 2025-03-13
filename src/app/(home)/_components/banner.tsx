@@ -178,7 +178,7 @@ export const Banner = () => {
           loop
           playsInline
           muted
-          className="transition-transform duration-1000 ease-out -mt-[28rem]"
+          className="transition-transform duration-1000 ease-out -mt-[28rem] rounded-[1.5rem]"
         ></video>
       </div>
     </div>

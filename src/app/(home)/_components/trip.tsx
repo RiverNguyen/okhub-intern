@@ -94,7 +94,7 @@ export const Trip = () => {
               </p>
               <p className="font-bold text-[3rem] text-white">$199</p>
             </div>
-            <button className="absolute -right-[6rem] bottom-[1.5rem] bg-[#DA4B19] text-white  text-[0.875rem] font-bold flex justify-center items-center gap-[0.23rem] px-[1.2rem] py-[0.8rem] rounded-[0.5rem] group-hover:right-[1.5rem] transition-all duration-300">
+            <button className="absolute -right-[6.8rem] bottom-[1.5rem] bg-[#DA4B19] text-white  text-[0.875rem] font-bold flex justify-center items-center gap-[0.23rem] px-[1.2rem] py-[0.8rem] rounded-[0.5rem] group-hover:right-[1.5rem] transition-all duration-300">
               Detail <MoveRight />
             </button>
           </div>
