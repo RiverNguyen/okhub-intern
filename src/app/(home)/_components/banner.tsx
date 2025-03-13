@@ -1,6 +1,13 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import { Check, MoveRight } from "lucide-react";
 import Image from "next/image";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { havana, londrinaSolid } from "@/configs/font-family";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export const Banner = () => {
   const about = [
@@ -11,8 +18,30 @@ export const Banner = () => {
     { text: "Unique Experiences" },
   ];
 
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      gsap.fromTo(
+        videoRef.current,
+        { scale: 0.5, opacity: 0 },
+        {
+          scale: 1,
+          opacity: 1,
+          duration: 2,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: videoRef.current,
+            start: "top 80%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    }
+  }, []);
+
   return (
-    <div className="h-[146.5rem] relative z-50">
+    <div className="h-[180rem] relative z-50">
       <div className="w-full absolute -top-[5.25rem] h-[9.25rem] ">
         <Image src={"/mountain.svg"} alt="mountain" fill />
       </div>
@@ -97,7 +126,7 @@ export const Banner = () => {
               <button className="px-[2rem] py-[1rem] flex justify-center items-center text-white bg-[#DA4B19] rounded-[0.5rem] uppercase text-[0.875rem] font-bold hover:cursor-pointer">
                 Book Now <MoveRight className="ml-[0.5rem]" />
               </button>
-              <button className="px-[2rem] py-[1rem] flex justify-center items-center text-white/40 border border-white/40 rounded-[0.5rem] uppercase text-[0.875rem]hover:cursor-pointer font-bold">
+              <button className="px-[2rem] py-[1rem] flex justify-center items-center text-white/40 border border-white/40 rounded-[0.5rem] uppercase text-[0.875rem] hover:cursor-pointer font-bold">
                 All Tour <MoveRight className="ml-[0.5rem]" />
               </button>
             </div>
@@ -109,7 +138,7 @@ export const Banner = () => {
             height={710}
           />
         </div>
-        <div className="flex flex-col justify-center items-center">
+        <div className="flex flex-col justify-center items-center relative z-30 mt-[10rem]">
           <p className="uppercase text-white/60 text-[1.125rem] font-bold leading-[1.125rem]">
             Welcome to
           </p>
@@ -123,14 +152,16 @@ export const Banner = () => {
           >
             Beautiful
           </h3>
-          <Image
-            src={"/images/banner-2.png"}
-            alt="banner-2"
-            width={848}
-            height={477}
-            className="rounded-4xl -mt-[4rem]"
-          />
         </div>
+        <video
+          ref={videoRef}
+          src="https://cms.honghaotravel.com/wp-content/uploads/0622.mov"
+          autoPlay
+          loop
+          playsInline
+          muted
+          className="transition-transform duration-1000 ease-out -mt-[28rem]"
+        ></video>
       </div>
     </div>
   );

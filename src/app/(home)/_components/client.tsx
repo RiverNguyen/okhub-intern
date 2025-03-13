@@ -109,7 +109,7 @@ const Client = () => {
             </div>
           </div>
 
-          <div className="w-[23.81rem] h-[14.94rem] flex flex-col gap-y-[1rem] rounded-[1.5rem] bg-white/10 backdrop-blur-lg absolute top-[10rem] left-[16.3rem] px-[1rem] py-[1.5rem]">
+          <div className="w-[23.81rem] h-[14.94rem] flex flex-col gap-y-[1rem] rounded-[1.5rem] bg-white/10 backdrop-blur-lg absolute top-[10rem] left-[16.3rem] px-[1rem] py-[1.5rem] group-hover:hidden">
             <div className="flex justify-between">
               <div className="flex gap-x-[1.25rem] items-center">
                 <div className="w-[3rem] h-[3rem] rounded-full relative">
