@@ -41,7 +41,7 @@ export const Banner = () => {
   }, []);
 
   return (
-    <div className="h-[180rem] relative z-50">
+    <div className="h-[162.5rem] relative z-50">
       <div className="w-full absolute -top-[5.25rem] h-[9.25rem] ">
         <Image src={"/mountain.svg"} alt="mountain" fill />
       </div>
@@ -73,7 +73,7 @@ export const Banner = () => {
             ))}
           </div>
         </div>
-        <div className="bg-[url(/images/bg-banner-1.png)] bg-no-repeat bg-contain h-full w-full opacity-5 z-20 absolute top-0"></div>
+        <div className="bg-[url(/bg-banner.svg)] bg-no-repeat bg-contain h-full w-full opacity-5 z-20 absolute top-0"></div>
         <div className="text-white flex flex-col gap-y-[2rem] mt-[8rem] items-center justify-center">
           <p className="text-[0.875rem] font-extrabold">
             EXPLORE YOUR JOURNEY WITH US
@@ -86,7 +86,7 @@ export const Banner = () => {
             className="rotate-180"
           />
         </div>
-        <div className="bg-[url(/images/bg-banner-2.png)] bg-no-repeat bg-contain h-full w-full opacity-5 z-20 absolute bottom-0"></div>
+        {/* <div className="bg-[url(/images/bg-banner-2.png)] bg-no-repeat bg-contain h-full w-full opacity-5 z-20 absolute top-[40rem]"></div> */}
         <div className="mt-[3.5rem] flex justify-between px-[5rem]">
           <div>
             <h3
