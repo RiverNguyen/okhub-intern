@@ -6,6 +6,7 @@ import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { havana, londrinaSolid } from "@/configs/font-family";
+import Mountain from "./mountain";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -41,7 +42,7 @@ export const Banner = () => {
   }, []);
 
   return (
-    <div className="h-[162.5rem] relative z-50">
+    <div className="h-[161.3rem] relative z-50">
       <div className="w-full absolute -top-[5.25rem] h-[9.25rem] ">
         <Image src={"/mountain.svg"} alt="mountain" fill />
       </div>
@@ -86,7 +87,6 @@ export const Banner = () => {
             className="rotate-180"
           />
         </div>
-        {/* <div className="bg-[url(/images/bg-banner-2.png)] bg-no-repeat bg-contain h-full w-full opacity-5 z-20 absolute top-[40rem]"></div> */}
         <div className="mt-[3.5rem] flex justify-between px-[5rem]">
           <div>
             <h3
@@ -131,12 +131,7 @@ export const Banner = () => {
               </button>
             </div>
           </div>
-          <Image
-            src={"/images/banner-1.png"}
-            alt="banner"
-            width={1600}
-            height={710}
-          />
+          <Mountain />
         </div>
         <div className="flex flex-col justify-center items-center relative z-30 mt-[10rem]">
           <p className="uppercase text-white/60 text-[1.125rem] font-bold leading-[1.125rem]">

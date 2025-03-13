@@ -2,6 +2,7 @@ import { Earth, Mail, MapPinHouse, PhoneCall } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 import { Separator } from "@/components/ui/separator";
+import Mountain from "@/app/(home)/_components/mountain";
 
 const Footer = () => {
   return (
@@ -9,7 +10,7 @@ const Footer = () => {
       <div className="bg-white/85 absolute top-0 right-0 bottom-0 left-0 z-20" />
       <div className="relative z-30 pl-[5rem] pt-[4rem]">
         <Image src={"/images/logo.png"} alt="logo" width={200} height={200} />
-        <div className="flex justify-between">
+        <div className="flex justify-between overflow-hidden">
           <div className="">
             <div className="flex gap-x-[7.5rem] mt-[2.81rem]">
               <div className="flex flex-col gap-[1rem]">
@@ -110,13 +111,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <Image
-            src={"/images/banner-1.png"}
-            alt="footer"
-            width={1000}
-            height={1000}
-            className="w-[44.1875rem] h-[32.57038rem]"
-          />
+          <Mountain />
         </div>
         <div className="pr-[5rem] mt-[4.31rem]">
           <Separator className="text-[#C5C5C5]" />
