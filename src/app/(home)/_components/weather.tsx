@@ -25,31 +25,46 @@ const Weather = () => {
   ];
 
   return (
-    <div className="relative w-full">
-      {/* {Array.from({ length: 8 }).map((_, index) => {
-        const top = Math.random() * 50; // Vị trí ngẫu nhiên theo chiều dọc
-        const scale = Math.random() * 0.5 + 0.75; // Phóng to/thu nhỏ ngẫu nhiên
-        const opacity = Math.random() * 0.5 + 0.5; // Làm mờ tự nhiên hơn
-        const delay = Math.random() * 2; // Trễ animation ngẫu nhiên
+    <div className="relative w-full z-30 -mt-[9rem]">
+      <div className="h-[10rem] overflow-hidden relative z-40 -ml-[20rem] w-[calc(100% + 16rem)]">
+        <div
+          className="absolute h-[2rem] bottom-4 left-10 z-30 right-0"
+          style={{
+            background:
+              "linear-gradient(0deg, #FFF 50%, rgba(255, 255, 255, 0) 100%)",
+          }}
+        ></div>
+        {Array.from({ length: 30 }).map((_, index) => {
+          const leftPosition = `${(index / 29) * 100}%`;
+          const scaleSize = 0.8 + Math.random() * 0.5;
+          const opacity = 0.5 + Math.random() * 0.5;
+          const blurAmount = Math.random() * 5;
+          const topPosition = Math.random() * 5;
 
-        return (
-          <Image
-            key={index}
-            src={`/cloud-${(index % 3) + 1}.svg`} // Chỉ dùng 3 loại cloud để lặp lại
-            alt={`cloud-${index + 1}`}
-            width={600}
-            height={600}
-            className="absolute animate-float"
-            style={{
-              top: `${top}%`,
-              left: `${(index / 8) * 100}%`, // Trải đều theo chiều ngang
-              transform: `scale(${scale})`,
-              opacity: opacity,
-              animationDelay: `${delay}s`,
-            }}
-          />
-        );
-      })} */}
+          return (
+            <Image
+              key={index}
+              src={`/cloud-${(index % 2) + 2}.svg`}
+              alt={`cloud-${index + 1}`}
+              width={500}
+              height={300}
+              className={`absolute ${
+                index === 0 ? "animate-none" : "animate-float"
+              }`}
+              style={{
+                left: leftPosition,
+                top: `${topPosition}rem`,
+                transform: `scale(${scaleSize})`,
+                opacity: opacity,
+                zIndex: 50,
+                filter: `blur(${blurAmount}px)`,
+                mixBlendMode: "overlay",
+              }}
+            />
+          );
+        })}
+      </div>
+
       <div className="relative px-[5rem]">
         <Carousel className="w-full h-[44rem] rounded-[1.5rem] overflow-hidden relative ">
           <CarouselContent>

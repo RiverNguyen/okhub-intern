@@ -1,12 +1,35 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Image from "next/image";
-import React from "react";
 import { londrinaSolid } from "@/configs/font-family";
 import { MoveRight } from "lucide-react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export const Trip = () => {
+  const [currentImage, setCurrentImage] = useState("/images/tour-2.png");
+
+  useEffect(() => {
+    const sections = document.querySelectorAll(".trip-item");
+
+    sections.forEach((section, index) => {
+      ScrollTrigger.create({
+        trigger: section,
+        start: "top center",
+        onEnter: () => setCurrentImage(`/images/tour-${index + 2}.png`),
+        onEnterBack: () => setCurrentImage(`/images/tour-${index + 2}.png`),
+      });
+    });
+
+    return () => ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+  }, []);
+
   return (
     <div className="flex justify-between mt-[3.31rem]">
-      <div className="mt-[2rem] sticky top-[5rem] max-h-screen">
+      <div className="mt-[2rem] sticky top-[5rem] h-fit">
         <p className="text-[1.125rem] font-bold text-[#262626]/60">EXPLORE</p>
         <h3
           className={`${londrinaSolid.className} text-[#262626] text-[3.5rem] font-[900]`}
@@ -14,7 +37,7 @@ export const Trip = () => {
           BEST TRIPS FOR YOU
         </h3>
         <Image
-          src={"/2days-3nights.svg"}
+          src={currentImage}
           alt="tour"
           width={468}
           height={450}
@@ -22,10 +45,10 @@ export const Trip = () => {
         />
       </div>
       <div className="flex flex-col gap-y-[2rem]">
-        {Array.from({ length: 5 }).map((_, index) => (
+        {Array.from({ length: 3 }).map((_, index) => (
           <div
             key={index}
-            className={`w-[47.3125rem] h-[34.375rem] bg-no-repeat rounded-[1.5rem] bg-contain relative group overflow-hidden hover:shadow-lg transition-all duration-300`}
+            className="trip-item w-[47.3125rem] h-[34.375rem] bg-no-repeat rounded-[1.5rem] bg-contain relative group hover:cursor-pointer overflow-hidden hover:shadow-lg transition-all duration-300"
             style={{ backgroundImage: `url(/images/trip-${index + 1}.png)` }}
           >
             <div className="w-full bg-[linear-gradient(180deg,rgba(18,39,24,0.00)_10%,#122718_100%)] absolute top-0 right-0 bottom-0 left-0 rounded-[1.5rem]"></div>
@@ -65,13 +88,13 @@ export const Trip = () => {
                 Days 5 Nights
               </p>
             </div>
-            <div className="absolute right-[1.88rem] bottom-[1.2rem] group-hover:bottom-[4rem] transition-all duration-300">
+            <div className="absolute right-[1.88rem] bottom-[1.2rem] group-hover:bottom-[4.5rem] transition-all duration-300">
               <p className="text-[1rem] font-bold text-white/60 float-right">
                 From To
               </p>
               <p className="font-bold text-[3rem] text-white">$199</p>
             </div>
-            <button className="absolute -right-[6rem] bottom-[1.5rem] bg-[#DA4B19] text-white  text-[0.875rem] font-bold flex justify-center items-center gap-[0.23rem] px-[0.91rem] py-[0.46rem] rounded-[0.23rem] group-hover:right-[1.5rem] transition-all duration-300">
+            <button className="absolute -right-[6rem] bottom-[1.5rem] bg-[#DA4B19] text-white  text-[0.875rem] font-bold flex justify-center items-center gap-[0.23rem] px-[1.2rem] py-[0.8rem] rounded-[0.5rem] group-hover:right-[1.5rem] transition-all duration-300">
               Detail <MoveRight />
             </button>
           </div>

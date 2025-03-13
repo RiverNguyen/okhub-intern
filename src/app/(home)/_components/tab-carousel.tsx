@@ -16,7 +16,6 @@ import {
 } from "@/components/ui/tabs";
 import { Dot } from "lucide-react";
 import Image from "next/image";
-import Autoplay from "embla-carousel-autoplay";
 
 const TabCarousel = () => {
   return (
@@ -36,11 +35,6 @@ const TabCarousel = () => {
             opts={{
               align: "start",
             }}
-            plugins={[
-              Autoplay({
-                delay: 5000,
-              }),
-            ]}
             className="w-full max-w-screen-lg ml-auto relative"
           >
             <CarouselContent>

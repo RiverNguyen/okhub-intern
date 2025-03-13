@@ -253,7 +253,7 @@ const Client = () => {
           }}
         />
 
-        <div className="flex items-center">
+        <div className="flex items-center pb-[3rem]">
           <div className="relative z-30 flex flex-col gap-y-[2.12rem]">
             <div className="">
               <h3 className="uppercase text-[1.125rem] text-white/40 font-bold">
