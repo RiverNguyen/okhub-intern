@@ -3,7 +3,7 @@ import React from "react";
 
 const Mountain = () => {
   return (
-    <div className="relative">
+    <div className="relative hidden md:block">
       <Image
         src={"/images/mountain.png"}
         alt="banner"

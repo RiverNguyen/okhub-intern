@@ -22,7 +22,7 @@ const HomePage = () => {
           <span className="text-white rotate-90 absolute left-0 top-1/2 -translate-y-1/2 text-center z-30 text-[0.75rem] font-extrabold">
             Hong Hoa Travel
           </span>
-          <div className="relative z-30">
+          <div className="relative z-30 md:block hidden">
             <div className="flex items-center justify-center flex-col">
               <div className="w-[30.3125rem] h-[32.5625rem] relative z-30 ">
                 <HomeImage />
@@ -31,7 +31,7 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-        <div className="flex justify-center items-center relative z-40">
+        <div className="hidden justify-center items-center relative z-40 md:flex">
           <FormHome />
         </div>
         <div className="relative z-30">
@@ -39,13 +39,13 @@ const HomePage = () => {
         </div>
       </div>
       <Banner />
-      <div className="px-[5rem]">
+      {/* <div className="px-[5rem]">
         <Trip />
       </div>
       <Gallery />
       <Client />
       <Weather />
-      <Footer />
+      <Footer /> */}
     </>
   );
 };

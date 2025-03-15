@@ -10,7 +10,7 @@ const FixedButton = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center gap-y-4 fixed right-[1.62rem] bottom-[2.88rem] z-[99]">
+    <div className="flex flex-col items-center justify-center gap-y-4 fixed right-[0.8rem] md:right-[1.62rem] bottom-[2.88rem] z-[99]">
       <FormPopup />
       <button className="relative flex items-center justify-center -mt-3">
         <div className="absolute w-[2.3125rem] h-[2.3125rem] animate-ping rounded-full bg-white/15"></div>

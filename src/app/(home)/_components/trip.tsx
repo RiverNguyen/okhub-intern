@@ -36,7 +36,6 @@ export const Trip = () => {
         >
           BEST TRIPS FOR YOU
         </h3>
-        mt-[3.31rem]
         <Image
           src={currentImage}
           alt="tour"

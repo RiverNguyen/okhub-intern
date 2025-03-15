@@ -2,13 +2,21 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Image from "next/image";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const HomeImage = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 639.98);
+  }, []);
+
   const firstImageRef = useRef<HTMLDivElement>(null);
   const secondImageRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
+    if (isMobile) return;
+
     const tl = gsap.timeline();
 
     tl.to(firstImageRef.current, {
@@ -31,7 +39,7 @@ const HomeImage = () => {
     return () => {
       tl.kill();
     };
-  }, []);
+  }, [isMobile]);
 
   return (
     <div className="relative w-full h-full ">

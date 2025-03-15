@@ -9,6 +9,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { cn } from "@/lib/utils";
 import { MenuIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -66,7 +67,12 @@ const Header = () => {
         <div className="relative">
           <Sheet>
             <SheetTrigger asChild>
-              <Button className="bg-transparent md:bg-[#E64827] border md:border-none border-white h-auto w-auto rounded-full p-[0.5rem] font-extrabold text-[1.25rem] hover:bg-[#E64827]">
+              <Button
+                className={cn(
+                  `md:bg-[#E64827] border md:border-none border-white h-auto w-auto rounded-full p-[0.5rem] font-extrabold text-[1.25rem] hover:bg-[#E64827]`,
+                  hasBg ? "bg-[#E64827]" : "bg-transparent"
+                )}
+              >
                 <MenuIcon />
                 MENU
               </Button>

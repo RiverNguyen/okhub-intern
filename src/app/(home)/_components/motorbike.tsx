@@ -57,7 +57,7 @@ const Motorbike = () => {
   return (
     <div
       ref={containerRef}
-      className="relative left-[2.5rem] -top-[3.7rem] z-50"
+      className="relative left-[2.5rem] -top-[3.7rem] z-50 hidden md:block"
     >
       <svg
         width="68"

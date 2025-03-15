@@ -6,33 +6,36 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import { useGSAP } from "@gsap/react";
+import Autoplay from "embla-carousel-autoplay";
 import gsap from "gsap";
 import { useRef } from "react";
-import Autoplay from "embla-carousel-autoplay";
 
 const HomeCarousel = () => {
   const divElement = useRef<HTMLDivElement>(null);
 
+  const mm = gsap.matchMedia();
+
   useGSAP(() => {
     if (divElement.current) {
       const tl = gsap.timeline();
-
-      tl.fromTo(
-        divElement.current,
-        { opacity: 0, y: 300, scale: 0 },
-        {
+      mm.add("(min-width: 639.98px)", () => {
+        tl.fromTo(
+          divElement.current,
+          { opacity: 0, y: 300, scale: 0 },
+          {
+            opacity: 1,
+            y: 0,
+            scale: 0.5,
+            duration: 1.5,
+            ease: "power3.out",
+          }
+        ).to(divElement.current, {
           opacity: 1,
-          y: 0,
-          scale: 0.5,
-          duration: 1.5,
-          ease: "power3.out",
-        }
-      ).to(divElement.current, {
-        opacity: 1,
-        y: -820,
-        scale: 1,
-        duration: 2,
-        ease: "power1.out",
+          y: -820,
+          scale: 1,
+          duration: 2,
+          ease: "power1.out",
+        });
       });
 
       return () => {
@@ -43,7 +46,10 @@ const HomeCarousel = () => {
 
   return (
     <div>
-      <div ref={divElement} className="relative z-30 w-full h-screen opacity-0">
+      <div
+        ref={divElement}
+        className="relative z-30 w-full h-screen -mt-[6rem] md:mt-0 md:opacity-0"
+      >
         <Carousel
           plugins={[
             Autoplay({
