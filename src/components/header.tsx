@@ -64,20 +64,23 @@ const Header = () => {
       } ${hasBg ? "bg-white shadow-md" : "bg-transparent"} `}
     >
       <div className="flex justify-between items-center relative z-50 transition-all duration-300 py-[1rem]">
-        <Image
-          src={hasBg ? "/black-logo.svg" : "/white-logo.svg"}
-          width={154}
-          height={51}
-          alt="logo"
-          className={`w-[7.1875rem] h-[2.5625rem] md:w-[9.625rem] md:h-[3.1875rem] ${
-            hasBg ? "-ml-[0.75rem]" : ""
-          }`}
-        />
+        <Link href={"/"}>
+          <Image
+            src={hasBg ? "/black-logo.svg" : "/white-logo.svg"}
+            width={154}
+            height={51}
+            alt="logo"
+            className={`w-[7.1875rem] h-[2.5625rem] md:w-[9.625rem] md:h-[3.1875rem] ${
+              hasBg ? "-ml-[0.75rem]" : ""
+            }`}
+          />
+        </Link>
+
         <Sheet>
           <SheetTrigger asChild>
             <Button
               className={cn(
-                `md:bg-[#E64827] border md:border-none border-white h-auto w-auto rounded-full p-[0.5rem] font-extrabold text-[1.25rem] hover:bg-[#E64827]`,
+                `md:bg-[#E64827] border hover:cursor-pointer md:border-none border-white h-auto w-auto rounded-full p-[0.5rem] font-extrabold text-[1.25rem] hover:bg-[#E64827]`,
                 hasBg ? "bg-[#E64827]" : "bg-transparent"
               )}
             >

@@ -14,7 +14,6 @@ import HomeCarousel from "./_components/home-carousel";
 const HomePage = () => {
   return (
     <>
-      <FixedButton />
       <Header />
       <div className=" h-[49.25rem] bg-[url(/images/sheet-bg.png)] bg-cover bg-no-repeat relative z-10 overflow-hidden">
         <div className="bg-[#0F492B]/90 absolute top-0 right-0 bottom-0 left-0 z-20" />
@@ -46,6 +45,7 @@ const HomePage = () => {
       <Client />
       <Weather />
       <Footer />
+      <FixedButton />
     </>
   );
 };
