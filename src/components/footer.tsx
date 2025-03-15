@@ -8,10 +8,10 @@ const Footer = () => {
   return (
     <div className="bg-[url(/mountain-1.svg)] h-[20rem] md:h-[36rem] w-full bg-no-repeat bg-contain bg-center relative">
       <div className="bg-white/60 md:bg-white/85 absolute top-0 right-0 bottom-0 left-0 z-20" />
-      <div className=" pl-[1rem] md:pl-[5rem] pt-[4rem]">
+      <div className="pl-[1rem] md:pl-[5rem] pt-[4rem]">
         <div className="relative z-30">
           <Image
-            src={"/images/logo.png"}
+            src={"/images/home/logo.png"}
             alt="logo"
             width={200}
             height={200}
@@ -119,17 +119,16 @@ const Footer = () => {
               </div>
             </div>
             <div className="z-10 md:overflow-visible">
-              <Mountain className="top-20 right-20 md:top-0 h-[16rem] w-[16rem]" />
+              <Mountain className="top-20 right-20 md:top-0 md:right-0 md:h-full md:w-full h-[16rem] w-[16rem]" />
             </div>
           </div>
         </div>
-
-        <div className="pr-[5rem] mt-[4.31rem]">
-          <Separator className="text-[#C5C5C5]" />
-          <p className="text-[0.875rem] text-[#A9A9A9] font-bold text-center mt-[0.94rem] pb-[2.31rem]">
-            © DESIGNED BY OKHUB AGENCY
-          </p>
-        </div>
+      </div>
+      <div className="md:px-[5rem] mt-[4.31rem]">
+        <Separator className="text-[#C5C5C5]" />
+        <p className="text-[0.875rem] text-[#A9A9A9] font-bold text-center mt-[0.94rem] pb-[2.31rem]">
+          © DESIGNED BY OKHUB AGENCY
+        </p>
       </div>
     </div>
   );

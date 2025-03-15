@@ -78,7 +78,7 @@ const Motorbike = () => {
 
       <Image
         ref={motorbikeElement}
-        src="/images/motorbike.png"
+        src="/images/home/motorbike.png"
         alt="motorbike"
         width={60}
         height={60}

@@ -73,7 +73,7 @@ const Weather = () => {
                 <div
                   className="h-[16rem] md:h-[44rem] w-full rounded-[1.5rem] relative"
                   style={{
-                    background: `url(/images/weather-${
+                    background: `url(/images/home/weather-${
                       index + 1
                     }.png) center/cover`,
                   }}

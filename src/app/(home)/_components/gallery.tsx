@@ -14,7 +14,7 @@ const Gallery = () => {
 
   const images = Array.from(
     { length: 5 },
-    (_, index) => `/images/gallery-${index + 1}.png`
+    (_, index) => `/images/home/gallery-${index + 1}.png`
   );
 
   const imagesReverse = [...images].reverse();

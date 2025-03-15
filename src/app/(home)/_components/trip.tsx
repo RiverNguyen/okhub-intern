@@ -10,7 +10,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 export const Trip = () => {
-  const [currentImage, setCurrentImage] = useState("/images/tour-2.png");
+  const [currentImage, setCurrentImage] = useState("/images/home/tour-2.png");
 
   useEffect(() => {
     const sections = document.querySelectorAll(".trip-item");
@@ -19,8 +19,9 @@ export const Trip = () => {
       ScrollTrigger.create({
         trigger: section,
         start: "top center",
-        onEnter: () => setCurrentImage(`/images/tour-${index + 2}.png`),
-        onEnterBack: () => setCurrentImage(`/images/tour-${index + 2}.png`),
+        onEnter: () => setCurrentImage(`/images/home/tour-${index + 2}.png`),
+        onEnterBack: () =>
+          setCurrentImage(`/images/home/tour-${index + 2}.png`),
       });
     });
 
@@ -53,7 +54,9 @@ export const Trip = () => {
           <div
             key={index}
             className="md:trip-item w-[16.8755rem] h-[23.33956rem] md:w-[47.3125rem] md:h-[34.375rem] bg-no-repeat rounded-[1rem] md:rounded-[1.5rem] bg-cover md:bg-contain relative group hover:scale-105 hover:cursor-pointer overflow-hidden hover:shadow-lg transition-all duration-500 flex-shrink-0"
-            style={{ backgroundImage: `url(/images/trip-${index + 1}.png)` }}
+            style={{
+              backgroundImage: `url(/images/home/trip-${index + 1}.png)`,
+            }}
           >
             <div className="w-full bg-[linear-gradient(180deg,rgba(18,39,24,0.00)_10%,#122718_100%)] absolute top-0 right-0 bottom-0 left-0 rounded-[1rem] md:rounded-[1.5rem]"></div>
             <div className="absolute bottom-[1.5rem] left-[1.5rem] text-white md:block hidden">

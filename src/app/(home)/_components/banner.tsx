@@ -207,7 +207,7 @@ export const Banner = () => {
           <Motorbike />
 
           <div ref={mountainRef}>
-            <Mountain mobile />
+            <Mountain />
           </div>
         </div>
         <div className="flex flex-col justify-center items-center relative z-30 mt-[3rem] md:mt-[10rem]">

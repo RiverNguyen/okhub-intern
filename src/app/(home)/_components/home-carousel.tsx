@@ -64,7 +64,7 @@ const HomeCarousel = () => {
                 <div
                   className="h-full w-full rounded-[1rem] relative"
                   style={{
-                    background: `url(/images/weather-${
+                    background: `url(/images/home/weather-${
                       index + 1
                     }.png) center/cover`,
                   }}

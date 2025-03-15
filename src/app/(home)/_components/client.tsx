@@ -18,7 +18,7 @@ import Fade from "embla-carousel-fade";
 const Client = () => {
   return (
     <>
-      <div className="bg-[url(/images/bg-client.png)] w-full bg-no-repeat bg-cover relative mt-[0.8rem] pt-[8.31rem] pb-[2rem] md:pb-0">
+      <div className="bg-[url(/images/home/bg-client.png)] w-full bg-no-repeat bg-cover relative mt-[0.8rem] pt-[8.31rem] pb-[2rem] md:pb-0">
         <div
           className="absolute top-0 bottom-0 right-0 left-0"
           style={{
@@ -55,7 +55,7 @@ const Client = () => {
                   {Array.from({ length: 4 }).map((_, index) => (
                     <CarouselItem key={index}>
                       <Image
-                        src={`/images/client-${index + 1}.png`}
+                        src={`/images/home/client-${index + 1}.png`}
                         alt="client"
                         width={468}
                         height={468}
@@ -114,7 +114,7 @@ const Client = () => {
                 <div className="flex gap-x-[1.25rem] items-center">
                   <div className="w-[3rem] h-[3rem] rounded-full relative">
                     <Image
-                      src={"/images/ava-client.png"}
+                      src={"/images/home/ava-client.png"}
                       alt="avatar-client"
                       fill
                       className="rounded-full object-cover object-right-bottom"
@@ -165,7 +165,7 @@ const Client = () => {
                 <div className="flex gap-x-[1.25rem] items-center">
                   <div className="w-[3rem] h-[3rem] rounded-full relative">
                     <Image
-                      src={"/images/ava-client.png"}
+                      src={"/images/home/ava-client.png"}
                       alt="avatar-client"
                       fill
                       className="rounded-full object-cover object-right-bottom"
@@ -215,7 +215,7 @@ const Client = () => {
                 <div className="flex gap-x-[1.25rem] items-center">
                   <div className="w-[3rem] h-[3rem] rounded-full relative">
                     <Image
-                      src={"/images/ava-client.png"}
+                      src={"/images/home/ava-client.png"}
                       alt="avatar-client"
                       fill
                       className="rounded-full object-cover object-right-bottom"
@@ -295,7 +295,7 @@ const Client = () => {
           </div>
         </div>
       </div>
-      <div className="bg-[url(/images/bg-client-1.png)] pb-[8rem] w-full bg-no-repeat bg-cover relative pl-[1rem] md:pl-[5rem] ">
+      <div className="bg-[url(/images/home/bg-client-1.png)] pb-[8rem] w-full bg-no-repeat bg-cover relative pl-[1rem] md:pl-[5rem] ">
         <div
           className="absolute top-0 bottom-0 right-0 left-0"
           style={{

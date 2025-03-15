@@ -149,7 +149,7 @@ const Header = () => {
               ))}
             </div>
             <Image
-              src={"/images/sheet-bg.png"}
+              src={"/images/home/sheet-bg.png"}
               alt="sheet"
               width={819}
               height={612}

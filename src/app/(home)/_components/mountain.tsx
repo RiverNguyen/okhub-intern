@@ -12,7 +12,7 @@ const Mountain = ({
   return (
     <div className={cn(`${mobile ? "hidden" : "block"} relative`, className)}>
       <Image
-        src={"/images/mountain.png"}
+        src={"/images/home/mountain.png"}
         alt="banner"
         width={800}
         height={700}

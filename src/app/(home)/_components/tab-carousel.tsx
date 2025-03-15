@@ -48,7 +48,7 @@ const TabCarousel = () => {
                       <Card className="p-0 rounded-[1.5rem] relative group overflow-hidden">
                         <CardContent className="p-0">
                           <Image
-                            src={"/images/tour.png"}
+                            src={"/images/home/tour.png"}
                             alt="tour"
                             width={300}
                             height={400}
@@ -95,7 +95,7 @@ const TabCarousel = () => {
                       <Card className="p-0 rounded-[1.5rem]">
                         <CardContent className="p-0">
                           <Image
-                            src={"/images/tour-1.png"}
+                            src={"/images/home/tour-1.png"}
                             alt="tour"
                             width={300}
                             height={400}
@@ -127,7 +127,7 @@ const TabCarousel = () => {
             <Card className="p-0 rounded-[1.5rem] relative group overflow-hidden w-[16rem]">
               <CardContent className="p-0">
                 <Image
-                  src={"/images/tour.png"}
+                  src={"/images/home/tour.png"}
                   alt="tour"
                   width={300}
                   height={400}

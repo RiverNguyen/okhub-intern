@@ -45,7 +45,7 @@ const HomeImage = () => {
     <div className="relative w-full h-full ">
       <div ref={firstImageRef} className="absolute inset-0">
         <Image
-          src="/images/home-image.png"
+          src="/images/home/home-image.png"
           alt="home"
           width={300}
           height={300}
