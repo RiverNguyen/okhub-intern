@@ -9,11 +9,18 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTriggerCustom,
+} from "@/components/ui/accordion";
 import { cn } from "@/lib/utils";
 import { MenuIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 
 const Header = () => {
   const [isSticky, setIsSticky] = useState(true);
@@ -42,7 +49,7 @@ const Header = () => {
   const linkMenu = [
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
-    { name: "Tour", href: "/tour" },
+    { name: "Tour" },
     { name: "Activity", href: "/activity" },
     { name: "Destination", href: "/destination" },
     { name: "Blog", href: "/blog" },
@@ -52,9 +59,9 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed z-[60] top-0 left-0 w-full transition-all md:px-[5rem] px-[1.25rem] duration-300  ${
+      className={`fixed z-[60] top-0 left-0 w-full transition-all md:px-[5rem] px-[1.25rem] duration-300 ${
         isSticky ? "translate-y-0" : "-translate-y-full"
-      } ${hasBg ? "bg-white shadow-md" : "bg-transparent"}`}
+      } ${hasBg ? "bg-white shadow-md" : "bg-transparent"} `}
     >
       <div className="flex justify-between items-center relative z-50 transition-all duration-300 py-[1rem]">
         <Image
@@ -64,59 +71,87 @@ const Header = () => {
           alt="logo"
           className="w-[7.1875rem] h-[2.5625rem] md:w-[9.625rem] md:h-[3.1875rem]"
         />
-        <div className="relative">
-          <Sheet>
-            <SheetTrigger asChild>
-              <Button
-                className={cn(
-                  `md:bg-[#E64827] border md:border-none border-white h-auto w-auto rounded-full p-[0.5rem] font-extrabold text-[1.25rem] hover:bg-[#E64827]`,
-                  hasBg ? "bg-[#E64827]" : "bg-transparent"
-                )}
-              >
-                <MenuIcon />
-                MENU
-              </Button>
-            </SheetTrigger>
-            <SheetContent
-              side="top"
-              className="bg-[#0F492B] border-none rounded-bl-4xl rounded-br-4xl pb-[3.81rem] pl-[1.25rem] md:pl-[5rem] bg-[url(/sheet-bg.png)] bg-no-repeat bg-cover data-[state=closed]:duration-700 data-[state=open]:duration-700"
+        <Sheet>
+          <SheetTrigger asChild>
+            <Button
+              className={cn(
+                `md:bg-[#E64827] border md:border-none border-white h-auto w-auto rounded-full p-[0.5rem] font-extrabold text-[1.25rem] hover:bg-[#E64827]`,
+                hasBg ? "bg-[#E64827]" : "bg-transparent"
+              )}
             >
-              <SheetHeader className="p-0">
-                <SheetTitle>
-                  <Image
-                    src={"/logo.svg"}
-                    className="pt-[2rem]"
-                    width={154}
-                    height={51}
-                    alt="logo"
-                  />
-                </SheetTitle>
-              </SheetHeader>
-              <div className="mt-[4.44rem] w-[23rem]">
-                {linkMenu.map((item) => (
-                  <div key={item.href} className="flex flex-col gap-y-[0.5rem]">
+              <MenuIcon />
+              MENU
+            </Button>
+          </SheetTrigger>
+          <SheetContent
+            side="top"
+            className="bg-[#0F492B] border-none rounded-bl-4xl rounded-br-4xl pb-[3.81rem] pl-[1.25rem] md:pl-[5rem] bg-[url(/sheet-bg.png)] bg-no-repeat bg-cover data-[state=closed]:duration-700 data-[state=open]:duration-700 max-h-[80vh] overflow-y-auto hidden-y-scroll absolute"
+          >
+            <SheetHeader className="p-0">
+              <SheetTitle>
+                <Image
+                  src={"/logo.svg"}
+                  className="pt-[2rem]"
+                  width={154}
+                  height={51}
+                  alt="logo"
+                />
+              </SheetTitle>
+            </SheetHeader>
+            <div className="mt-[4.44rem] w-[23rem] ">
+              {linkMenu.map((item, index) => (
+                <Fragment key={item.href || index}>
+                  <div className="flex flex-col gap-y-[0.5rem]">
                     <div>
-                      <Link
-                        className="text-white text-[2rem] font-bold"
-                        href={item.href}
-                      >
-                        {item.name}
-                      </Link>
+                      {item.name === "Tour" ? (
+                        <Accordion type="single" collapsible className="w-full">
+                          <AccordionItem value="item-1">
+                            <AccordionTriggerCustom className="text-white text-[2rem] font-bold p-0">
+                              Tour
+                            </AccordionTriggerCustom>
+                            <AccordionContent className="opacity-80 text-white font-bold text-[1.25rem]">
+                              {[
+                                {
+                                  href: "/best-budget",
+                                  label: "Best Budget",
+                                },
+                                { href: "/standard", label: "Standard" },
+                                { href: "/premium", label: "Premium" },
+                                { href: "/all-tours", label: "All tours" },
+                              ].map((tour) => (
+                                <div
+                                  key={tour.href}
+                                  className="py-[0.5rem] pr-[1rem] w-fit border-b border-solid border-neutral-300"
+                                >
+                                  <Link href={tour.href}>{tour.label}</Link>
+                                </div>
+                              ))}
+                            </AccordionContent>
+                          </AccordionItem>
+                        </Accordion>
+                      ) : (
+                        <Link
+                          className="text-white text-[2rem] font-bold"
+                          href={item.href || ""}
+                        >
+                          {item.name}
+                        </Link>
+                      )}
                       <Separator className="mt-[0.5rem] opacity-20 w-[40.125rem]" />
                     </div>
                   </div>
-                ))}
-              </div>
-              <Image
-                src={"/images/sheet-bg.png"}
-                alt="sheet"
-                width={819}
-                height={612}
-                className="absolute top-0 bottom-0 right-0 h-full w-[52rem] rounded-br-4xl hidden md:block"
-              />
-            </SheetContent>
-          </Sheet>
-        </div>
+                </Fragment>
+              ))}
+            </div>
+            <Image
+              src={"/images/sheet-bg.png"}
+              alt="sheet"
+              width={819}
+              height={612}
+              className="absolute top-0 bottom-0 right-0 h-full w-[52rem] rounded-br-2xl hidden md:block"
+            />
+          </SheetContent>
+        </Sheet>
       </div>
     </header>
   );

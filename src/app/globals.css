@@ -199,6 +199,15 @@ html {
   display: none;
 }
 
+.hidden-y-scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hidden-y-scroll::-webkit-scrollbar {
+  display: none;
+}
+
 html > body[data-scroll-locked] {
   overflow: auto !important;
   --removed-body-scroll-bar-size: 0px;

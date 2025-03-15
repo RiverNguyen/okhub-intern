@@ -18,7 +18,7 @@ import Fade from "embla-carousel-fade";
 const Client = () => {
   return (
     <>
-      <div className="bg-[url(/images/bg-client.png)] w-full bg-no-repeat bg-cover relative mt-[0.8rem] pt-[8.31rem]">
+      <div className="bg-[url(/images/bg-client.png)] w-full bg-no-repeat bg-cover relative mt-[0.8rem] pt-[8.31rem] pb-[2rem] md:pb-0">
         <div
           className="absolute top-0 bottom-0 right-0 left-0"
           style={{
@@ -108,7 +108,7 @@ const Client = () => {
               />
             </div>
           </div>
-          <div className="hidden-x-scroll flex flex-row md:block gap-x-[0.5rem]  overflow-x-auto md:overflow-x-visible px-[1rem]">
+          <div className="hidden-x-scroll flex flex-row md:block gap-x-[0.5rem] overflow-x-auto md:overflow-x-visible px-[1rem]">
             <div className=" flex flex-col gap-y-[1rem] rounded-[1.5rem] bg-white/10 backdrop-blur-lg md:absolute top-[10rem] left-[16.3rem] px-[1rem] py-[1.5rem] group-hover:hidden">
               <div className="flex justify-between">
                 <div className="flex gap-x-[1.25rem] items-center">
@@ -295,7 +295,7 @@ const Client = () => {
           </div>
         </div>
       </div>
-      {/* <div className="bg-[url(/images/bg-client-1.png)] pb-[8rem] w-full bg-no-repeat bg-cover relative pl-[5rem]">
+      <div className="bg-[url(/images/bg-client-1.png)] pb-[8rem] w-full bg-no-repeat bg-cover relative pl-[1rem] md:pl-[5rem] ">
         <div
           className="absolute top-0 bottom-0 right-0 left-0"
           style={{
@@ -304,7 +304,7 @@ const Client = () => {
           }}
         />
 
-        <div className="flex items-center pb-[3rem]">
+        <div className="flex md:flex-row flex-col md:items-center pb-[3rem] pt-[2rem]">
           <div className="relative z-30 flex flex-col gap-y-[2.12rem]">
             <div className="">
               <h3 className="uppercase text-[1.125rem] text-white/40 font-bold">
@@ -316,19 +316,19 @@ const Client = () => {
                 Our Team
               </h2>
             </div>
-            <p className="text-[0.875rem] w-[24rem] text-[#F1F1F1]/50">
+            <p className="text-[0.875rem] w-[21rem] md:w-[24rem] text-[#F1F1F1]/50">
               We pride ourselves on having a team of dedicated and passionate
               individuals who are committed to providing exceptional service and
               unforgettable experiences to our guests. Our team is comprised of
               knowledgeable professionals with diverse backgrounds and expertise
               in various aspects of the tourism industry.
             </p>
-            <div className="flex gap-x-[1rem]">
-              <button className="px-[1.25rem] py-[0.62rem] flex justify-center items-center text-white bg-[#DA4B19] rounded-[0.5rem] uppercase text-[0.875rem] font-bold hover:cursor-pointer group">
+            <div className="flex gap-x-[1rem] pr-[1rem]">
+              <button className="px-[1.25rem] py-[0.62rem] w-full flex justify-center items-center text-white bg-[#DA4B19] rounded-[0.5rem] uppercase text-[0.875rem] font-bold hover:cursor-pointer group">
                 Join with us{" "}
                 <MoveRight className="ml-[0.5rem] group-hover:translate-x-1 transform duration-300 ease-in-out" />
               </button>
-              <button className="px-[1.25rem] py-[0.62rem] flex justify-center items-center text-white/40 border border-white/40 rounded-[0.5rem] uppercase text-[0.875rem]hover:cursor-pointer font-bold group">
+              <button className="px-[1.25rem] py-[0.62rem] w-full flex justify-center items-center text-white/40 border border-white/40 rounded-[0.5rem] uppercase text-[0.875rem]hover:cursor-pointer font-bold group">
                 Call us{" "}
                 <MoveRight className="ml-[0.5rem] group-hover:translate-x-1 transform duration-300 ease-in-out" />
               </button>
@@ -339,7 +339,7 @@ const Client = () => {
             <TabCarousel />
           </div>
         </div>
-      </div> */}
+      </div>
     </>
   );
 };

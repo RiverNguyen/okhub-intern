@@ -44,8 +44,8 @@ const HomePage = () => {
       </div>
       <Gallery />
       <Client />
-      {/* <Weather />
-      <Footer /> */}
+      <Weather />
+      <Footer />
     </>
   );
 };
