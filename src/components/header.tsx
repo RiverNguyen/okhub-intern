@@ -48,7 +48,7 @@ const Header = () => {
 
   const linkMenu = [
     { name: "Home", href: "/" },
-    { name: "About Us", href: "/about" },
+    { name: "About Us", href: "/about-us" },
     { name: "Tour" },
     { name: "Activity", href: "/activity" },
     { name: "Destination", href: "/destination" },

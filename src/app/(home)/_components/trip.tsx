@@ -1,18 +1,19 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import Image from "next/image";
 import { londrinaSolid } from "@/configs/font-family";
-import { MoveRight } from "lucide-react";
+import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { MoveRight } from "lucide-react";
+import Image from "next/image";
+import { useState } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export const Trip = () => {
   const [currentImage, setCurrentImage] = useState("/images/home/tour-2.png");
 
-  useEffect(() => {
+  useGSAP(() => {
     const sections = document.querySelectorAll(".trip-item");
 
     sections.forEach((section, index) => {
@@ -53,7 +54,7 @@ export const Trip = () => {
         {Array.from({ length: 3 }).map((_, index) => (
           <div
             key={index}
-            className="md:trip-item w-[16.8755rem] h-[23.33956rem] md:w-[47.3125rem] md:h-[34.375rem] bg-no-repeat rounded-[1rem] md:rounded-[1.5rem] bg-cover md:bg-contain relative group hover:scale-105 hover:cursor-pointer overflow-hidden hover:shadow-lg transition-all duration-500 flex-shrink-0"
+            className="trip-item w-[16.8755rem] h-[23.33956rem] md:w-[47.3125rem] md:h-[34.375rem] bg-no-repeat rounded-[1rem] md:rounded-[1.5rem] bg-cover md:bg-contain relative group hover:scale-105 hover:cursor-pointer overflow-hidden hover:shadow-lg transition-all duration-500 flex-shrink-0"
             style={{
               backgroundImage: `url(/images/home/trip-${index + 1}.png)`,
             }}

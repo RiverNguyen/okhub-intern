@@ -273,7 +273,7 @@ export default function MyForm() {
             </div>
           </div>
 
-          <div className="grid grid-cols-12 gap-[0.75rem] mb-[1rem]">
+          <div className="grid md:grid-cols-12 gap-[0.75rem] mb-[1rem]">
             <div className="col-span-3">
               <FormField
                 control={form.control}
@@ -381,7 +381,7 @@ export default function MyForm() {
             </div>
           </div>
 
-          <div className="grid grid-cols-12 gap-[0.75rem] mb-[1rem]">
+          <div className="grid md:grid-cols-12 gap-[0.75rem] mb-[1rem]">
             <div className="col-span-3">
               <FormField
                 control={form.control}
@@ -512,7 +512,7 @@ export default function MyForm() {
                       <Input
                         type="number"
                         {...field}
-                        className="text-right pr-[1.3rem] text-[#DA4B19] text-[0.875rem] font-bold border-none shadow-none bg-[#F1F1F1]"
+                        className="text-right pr-[2.3rem] md:pr-[1.3rem] text-[#DA4B19] text-[0.875rem] font-bold border-none shadow-none bg-[#F1F1F1]"
                         readOnly
                         value={selfDriving}
                       />
@@ -570,7 +570,7 @@ export default function MyForm() {
                       <Input
                         type="number"
                         {...field}
-                        className="text-right pr-[1.3rem] text-[#DA4B19] text-[0.875rem] font-bold border-none shadow-none bg-[#F1F1F1]"
+                        className="text-right pr-[2.3rem] md:pr-[1.3rem] text-[#DA4B19] text-[0.875rem] font-bold border-none shadow-none bg-[#F1F1F1]"
                         readOnly
                         value={localDriving}
                       />

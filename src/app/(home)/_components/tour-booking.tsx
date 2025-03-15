@@ -16,27 +16,29 @@ const TourBooking = () => {
   ];
 
   return (
-    <div className="flex flex-col gap-[0.75rem]">
+    <div className="flex flex-col gap-[0.75rem] text-left">
       <div className="grid grid-cols-3 rounded-[0.5rem] bg-[#F8F8F8]">
         <div className="col-span-1">
           {tourInfo.map((info, index) => (
             <div
               key={index}
               className={cn(
-                `flex justify-between items-center border-b h-[2.5rem] py-[0.5rem] px-[1rem] border-[#E5E5E5]`,
+                `flex justify-between items-center border-b h-[2.5rem] px-[0.8rem] md:py-[0.5rem] md:px-[1rem] border-[#E5E5E5]`,
                 info === "Message" && "border-b-0",
                 info === "Pick up" && "h-[3.5rem]"
               )}
             >
-              <p className="text-[0.875rem] text-[#2E2E2E] font-bold">{info}</p>
+              <p className="text-[0.75rem] md:text-[0.875rem] text-[#2E2E2E] font-bold">
+                {info}
+              </p>
             </div>
           ))}
         </div>
         <div className="col-span-2 *:text-[0.75rem] border-l border-[#E5E5E5]">
-          <div className="flex justify-between items-center border-b h-[2.5rem] py-[0.5rem] px-[1rem] border-[#E5E5E5]">
+          <div className="flex justify-between items-center border-b h-[2.5rem] pl-[0.8rem] md:py-[0.5rem] md:px-[1rem] border-[#E5E5E5]">
             <p>Ha Giang Loop tour: Itinerary in 3 Days 4 Nights</p>
           </div>
-          <div className="flex justify-between items-center border-b h-[2.5rem] py-[0.5rem] px-[1rem] border-[#E5E5E5]">
+          <div className="flex justify-between items-center border-b h-[2.5rem] pl-[0.8rem] md:py-[0.5rem] md:px-[1rem] border-[#E5E5E5]">
             <p>
               Tuan Minh -{" "}
               <span className="text-[#2E2E2E] text-[0.875rem] font-semibold">
@@ -44,25 +46,25 @@ const TourBooking = () => {
               </span>
             </p>
           </div>
-          <div className="flex justify-between items-center border-b h-[2.5rem] py-[0.5rem] px-[1rem] border-[#E5E5E5]">
+          <div className="flex justify-between items-center border-b h-[2.5rem] pl-[0.8rem] md:py-[0.5rem] md:px-[1rem] border-[#E5E5E5]">
             <p>tuanminh2024@gmail.com - 0941556338</p>
           </div>
-          <div className="flex justify-between items-center border-b h-[3.5rem] py-[0.5rem] px-[1rem] border-[#E5E5E5]">
-            <p>
-              <span className="text-[#2E2E2E] text-[0.875rem] font-semibold">
+          <div className="flex justify-between items-center border-b h-[3.5rem] pl-[0.8rem] md:py-[0.5rem] md:px-[1rem] border-[#E5E5E5]">
+            <p className="text-[0.5rem]">
+              <span className="text-[#2E2E2E] text-[0.6rem] md:text-[0.875rem] font-semibold">
                 15/9/2023
               </span>{" "}
               from Hanoi at{" "}
-              <span className="text-[#2E2E2E] text-[0.875rem] font-semibold">
+              <span className="text-[#2E2E2E] text-[0.6rem] md:text-[0.875rem] font-semibold">
                 20:00
               </span>{" "}
               Hong Hao Hostel No. 10 Pham Hong Thai, Minh Khai Ward, Ha Noi
             </p>
           </div>
-          <div className="flex justify-between items-center border-b h-[2.5rem] py-[0.5rem] px-[1rem] border-[#E5E5E5]">
+          <div className="flex justify-between items-center border-b h-[2.5rem] pl-[0.8rem] md:py-[0.5rem] md:px-[1rem] border-[#E5E5E5]">
             <p>3 Days 4 Nights</p>
           </div>
-          <div className="flex justify-between items-center border-b h-[2.5rem] py-[0.5rem] px-[1rem] border-[#E5E5E5]">
+          <div className="flex justify-between items-center border-b h-[2.5rem] pl-[0.8rem] md:py-[0.5rem] md:px-[1rem] border-[#E5E5E5]">
             <p>
               <span className="text-[#2E2E2E] text-[0.875rem] font-semibold">
                 18/9/2023
@@ -70,7 +72,7 @@ const TourBooking = () => {
               - My Dinh Station, Ha Noi
             </p>
           </div>
-          <div className="flex justify-between items-center border-b h-[2.5rem] py-[0.5rem] px-[1rem] border-[#E5E5E5]">
+          <div className="flex justify-between items-center border-b h-[2.5rem] pl-[0.8rem] md:py-[0.5rem] md:px-[1rem] border-[#E5E5E5]">
             <p>
               <span className="text-[#2E2E2E] text-[0.875rem] font-semibold">
                 01
@@ -81,7 +83,7 @@ const TourBooking = () => {
               </span>{" "}
             </p>
           </div>
-          <div className="flex justify-between items-center border-b h-[2.5rem] py-[0.5rem] px-[1rem] border-[#E5E5E5]">
+          <div className="flex justify-between items-center border-b h-[2.5rem] pl-[0.8rem] md:py-[0.5rem] md:px-[1rem] border-[#E5E5E5]">
             <p>
               <span className="text-[#2E2E2E] text-[0.875rem] font-semibold">
                 02
@@ -112,7 +114,7 @@ const TourBooking = () => {
           <p>$584,01</p>
         </div>
       </div>
-      <div className="flex uppercase justify-between gap-[0.5rem]">
+      <div className="flex flex-col md:flex-row uppercase justify-between gap-[0.5rem]">
         <button
           form="bookForm"
           type="submit"

@@ -7,6 +7,7 @@ import {
 } from "@/components/ui/dialog";
 import MyForm from "./form";
 import TourBooking from "./tour-booking";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 const FormPopup = () => {
   return (
@@ -16,22 +17,24 @@ const FormPopup = () => {
           Book Now
         </button>
       </DialogTrigger>
-      <DialogContent className="grid grid-cols-1 md:grid-cols-2 h-[42.45rem] min-w-[70.25rem] p-[1.5rem] overflow-y-auto">
-        <div>
+      <ScrollArea>
+        <DialogContent className="grid grid-cols-1 md:grid-cols-2 h-[40rem] md:h-[42.45rem] md:min-w-[70.25rem] p-[1.5rem] overflow-y-auto">
+          <div>
+            <DialogHeader>
+              <DialogTitle className="text-[0.875rem] text-[#2E2E2E] font-bold">
+                Customer information:
+              </DialogTitle>
+            </DialogHeader>
+            <MyForm />
+          </div>
           <DialogHeader>
-            <DialogTitle className="text-[0.875rem] text-[#2E2E2E] font-bold">
-              Customer information:
+            <DialogTitle className="text-[0.875rem] text-[#262626]/40 font-bold">
+              Confirmed tour booking
             </DialogTitle>
+            <TourBooking />
           </DialogHeader>
-          <MyForm />
-        </div>
-        <DialogHeader>
-          <DialogTitle className="text-[0.875rem] text-[#262626]/40 font-bold">
-            Confirmed tour booking
-          </DialogTitle>
-          <TourBooking />
-        </DialogHeader>
-      </DialogContent>
+        </DialogContent>
+      </ScrollArea>
     </Dialog>
   );
 };

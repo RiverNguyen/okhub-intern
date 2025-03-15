@@ -45,3 +45,13 @@ export const havana = localFont({
     },
   ],
 });
+
+export const angel = localFont({
+  src: [
+    {
+      path: "../fonts/angel-boos.ttf",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+});
