@@ -69,7 +69,9 @@ const Header = () => {
           width={154}
           height={51}
           alt="logo"
-          className="w-[7.1875rem] h-[2.5625rem] md:w-[9.625rem] md:h-[3.1875rem]"
+          className={`w-[7.1875rem] h-[2.5625rem] md:w-[9.625rem] md:h-[3.1875rem] ${
+            hasBg ? "-ml-[0.75rem]" : ""
+          }`}
         />
         <Sheet>
           <SheetTrigger asChild>

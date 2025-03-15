@@ -1,9 +1,16 @@
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 import React from "react";
 
-const Mountain = () => {
+const Mountain = ({
+  mobile,
+  className,
+}: {
+  mobile?: boolean;
+  className?: string;
+}) => {
   return (
-    <div className="relative hidden md:block">
+    <div className={cn(`${mobile ? "hidden" : "block"} relative`, className)}>
       <Image
         src={"/images/mountain.png"}
         alt="banner"
