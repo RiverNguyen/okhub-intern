@@ -39,12 +39,12 @@ const HomePage = () => {
         </div>
       </div>
       <Banner />
-      {/* <div className="px-[5rem]">
+      <div className="px-[1rem] md:px-[5rem]">
         <Trip />
       </div>
       <Gallery />
       <Client />
-      <Weather />
+      {/* <Weather />
       <Footer /> */}
     </>
   );

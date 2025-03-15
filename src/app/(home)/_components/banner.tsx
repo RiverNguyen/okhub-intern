@@ -78,11 +78,13 @@ export const Banner = () => {
         scrub: 1,
       },
     });
-    tl.fromTo(
-      bigElementRef.current,
-      { opacity: 1, y: 0 },
-      { opacity: 1, y: -800 }
-    );
+    mm.add("(min-width: 639.98px)", () => {
+      tl.fromTo(
+        bigElementRef.current,
+        { opacity: 1, y: 0 },
+        { opacity: 1, y: -800 }
+      );
+    });
 
     return () => {
       tl.kill();
@@ -90,7 +92,10 @@ export const Banner = () => {
   }, []);
 
   return (
-    <div ref={bigElementRef} className="h-[96rem] md:h-[168rem] relative z-50">
+    <div
+      ref={bigElementRef}
+      className="h-[96rem] md:h-[168rem] -mt-[3rem] md:mt-0 relative z-50"
+    >
       <div className="w-[4rem] absolute -top-[9.25rem] left-1/2 h-[9.25rem] ">
         <Image
           src={"/motor.svg"}

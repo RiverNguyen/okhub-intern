@@ -190,6 +190,15 @@ html {
   }
 }
 
+.hidden-x-scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hidden-x-scroll::-webkit-scrollbar {
+  display: none;
+}
+
 html > body[data-scroll-locked] {
   overflow: auto !important;
   --removed-body-scroll-bar-size: 0px;

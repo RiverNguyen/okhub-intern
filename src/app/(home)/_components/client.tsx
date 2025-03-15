@@ -32,7 +32,7 @@ const Client = () => {
           >
             Client Say
           </h2>
-          <div className="flex justify-center items-center">
+          <div className="justify-center items-center hidden md:flex">
             <div className="relative z-50 flex items-center justify-center size-[31.375rem] mt-[5rem]">
               <Image
                 src="/map-dashed.svg"
@@ -108,110 +108,161 @@ const Client = () => {
               />
             </div>
           </div>
-
-          <div className="w-[23.81rem] h-[14.94rem] flex flex-col gap-y-[1rem] rounded-[1.5rem] bg-white/10 backdrop-blur-lg absolute top-[10rem] left-[16.3rem] px-[1rem] py-[1.5rem] group-hover:hidden">
-            <div className="flex justify-between">
-              <div className="flex gap-x-[1.25rem] items-center">
-                <div className="w-[3rem] h-[3rem] rounded-full relative">
-                  <Image
-                    src={"/images/ava-client.png"}
-                    alt="avatar-client"
-                    fill
-                    className="rounded-full object-cover object-right-bottom"
-                  />
+          <div className="hidden-x-scroll flex flex-row md:block gap-x-[0.5rem]  overflow-x-auto md:overflow-x-visible px-[1rem]">
+            <div className=" flex flex-col gap-y-[1rem] rounded-[1.5rem] bg-white/10 backdrop-blur-lg md:absolute top-[10rem] left-[16.3rem] px-[1rem] py-[1.5rem] group-hover:hidden">
+              <div className="flex justify-between">
+                <div className="flex gap-x-[1.25rem] items-center">
+                  <div className="w-[3rem] h-[3rem] rounded-full relative">
+                    <Image
+                      src={"/images/ava-client.png"}
+                      alt="avatar-client"
+                      fill
+                      className="rounded-full object-cover object-right-bottom"
+                    />
+                  </div>
+                  <div className="">
+                    <p className="text-[1.25rem] font-bold text-[#F1F1F1]">
+                      Athony Ng
+                    </p>
+                    <p className="text-[0.875rem] text-[#F1F1F1]">2024-03-20</p>
+                  </div>
                 </div>
-                <div className="">
-                  <p className="text-[1.25rem] font-bold text-[#F1F1F1]">
-                    Athony Ng
-                  </p>
-                  <p className="text-[0.875rem] text-[#F1F1F1]">2024-03-20</p>
-                </div>
+                <Image
+                  src={"/social-1.svg"}
+                  alt="social"
+                  width={36}
+                  height={36}
+                />
               </div>
+              <div className="flex gap-x-[0.25rem]">
+                {Array.from({ length: 5 }).map((_, index) => (
+                  <Star
+                    key={index}
+                    fill="#E64827"
+                    className="text-[#E64827] size-[1rem]"
+                  />
+                ))}
+              </div>
+              <ScrollArea className="h-[5.31rem] text-[#F1F1F1] text-[0.875rem] w-[16.625rem] md:w-[20.625rem]">
+                Had 3 amazing days (and nights) out in the mountains for the
+                Loop. Best experience ever in Vietnam 🇻🇳, but more than anything
+                our tour guide Le Sy was the key to make it special. He is
+                smart, funny, organized and he has very good English, friendly
+                from the beginning to the end and always ready to help. Very
+                good. Recommended for sure, and Sy is a plus!
+              </ScrollArea>
               <Image
-                src={"/social-1.svg"}
-                alt="social"
-                width={36}
-                height={36}
+                src={"/dash-1.svg"}
+                alt="dash"
+                width={160}
+                height={150}
+                className="absolute top-1/2 right-0 transform translate-x-full md:block hidden"
               />
             </div>
-            <div className="flex gap-x-[0.25rem]">
-              {Array.from({ length: 5 }).map((_, index) => (
-                <Star
-                  key={index}
-                  fill="#E64827"
-                  className="text-[#E64827] size-[1rem]"
-                />
-              ))}
-            </div>
-            <ScrollArea className="h-[5.31rem] text-[#F1F1F1] text-[0.875rem] w-[20.625rem]">
-              Had 3 amazing days (and nights) out in the mountains for the Loop.
-              Best experience ever in Vietnam 🇻🇳, but more than anything our
-              tour guide Le Sy was the key to make it special. He is smart,
-              funny, organized and he has very good English, friendly from the
-              beginning to the end and always ready to help. Very good.
-              Recommended for sure, and Sy is a plus!
-            </ScrollArea>
-            <Image
-              src={"/dash-1.svg"}
-              alt="dash"
-              width={160}
-              height={150}
-              className="absolute top-1/2 right-0 transform translate-x-full"
-            />
-          </div>
 
-          <div className="w-[23.81rem] h-[14.94rem] flex flex-col gap-y-[1rem] rounded-[1.5rem] bg-white/10 backdrop-blur-lg absolute top-[15.38rem] right-[9.62rem] px-[1rem] py-[1.5rem] z-50">
-            <div className="flex justify-between">
-              <div className="flex gap-x-[1.25rem] items-center">
-                <div className="w-[3rem] h-[3rem] rounded-full relative">
-                  <Image
-                    src={"/images/ava-client.png"}
-                    alt="avatar-client"
-                    fill
-                    className="rounded-full object-cover object-right-bottom"
-                  />
+            <div className="flex flex-col gap-y-[1rem] rounded-[1.5rem] bg-white/10 backdrop-blur-lg md:absolute top-[15.38rem] right-[9.62rem] px-[1rem] py-[1.5rem] z-50">
+              <div className="flex justify-between">
+                <div className="flex gap-x-[1.25rem] items-center">
+                  <div className="w-[3rem] h-[3rem] rounded-full relative">
+                    <Image
+                      src={"/images/ava-client.png"}
+                      alt="avatar-client"
+                      fill
+                      className="rounded-full object-cover object-right-bottom"
+                    />
+                  </div>
+                  <div className="">
+                    <p className="text-[1.25rem] font-bold text-[#F1F1F1]">
+                      Athony Ng
+                    </p>
+                    <p className="text-[0.875rem] text-[#F1F1F1]">2024-03-20</p>
+                  </div>
                 </div>
-                <div className="">
-                  <p className="text-[1.25rem] font-bold text-[#F1F1F1]">
-                    Athony Ng
-                  </p>
-                  <p className="text-[0.875rem] text-[#F1F1F1]">2024-03-20</p>
-                </div>
+                <Image
+                  src={"/social-1.svg"}
+                  alt="social"
+                  width={36}
+                  height={36}
+                />
               </div>
+              <div className="flex gap-x-[0.25rem]">
+                {Array.from({ length: 5 }).map((_, index) => (
+                  <Star
+                    key={index}
+                    fill="#E64827"
+                    className="text-[#E64827] size-[1rem]"
+                  />
+                ))}
+              </div>
+              <ScrollArea className="h-[5.31rem] text-[#F1F1F1] text-[0.875rem] w-[16.625rem] md:w-[20.625rem]">
+                Had 3 amazing days (and nights) out in the mountains for the
+                Loop. Best experience ever in Vietnam 🇻🇳, but more than anything
+                our tour guide Le Sy was the key to make it special. He is
+                smart, funny, organized and he has very good English, friendly
+                from the beginning to the end and always ready to help. Very
+                good. Recommended for sure, and Sy is a plus!
+              </ScrollArea>
               <Image
-                src={"/social-1.svg"}
-                alt="social"
-                width={36}
-                height={36}
+                src={"/dash-2.svg"}
+                alt="dash"
+                width={220}
+                height={220}
+                className="absolute bottom-1/5 left-0 transform -translate-x-full md:block hidden"
               />
             </div>
-            <div className="flex gap-x-[0.25rem]">
-              {Array.from({ length: 5 }).map((_, index) => (
-                <Star
-                  key={index}
-                  fill="#E64827"
-                  className="text-[#E64827] size-[1rem]"
+            <div className="flex flex-col gap-y-[1rem] rounded-[1.5rem] bg-white/10 backdrop-blur-lg md:absolute top-[15.38rem] right-[9.62rem] px-[1rem] py-[1.5rem] z-50">
+              <div className="flex justify-between">
+                <div className="flex gap-x-[1.25rem] items-center">
+                  <div className="w-[3rem] h-[3rem] rounded-full relative">
+                    <Image
+                      src={"/images/ava-client.png"}
+                      alt="avatar-client"
+                      fill
+                      className="rounded-full object-cover object-right-bottom"
+                    />
+                  </div>
+                  <div className="">
+                    <p className="text-[1.25rem] font-bold text-[#F1F1F1]">
+                      Athony Ng
+                    </p>
+                    <p className="text-[0.875rem] text-[#F1F1F1]">2024-03-20</p>
+                  </div>
+                </div>
+                <Image
+                  src={"/social-1.svg"}
+                  alt="social"
+                  width={36}
+                  height={36}
                 />
-              ))}
+              </div>
+              <div className="flex gap-x-[0.25rem]">
+                {Array.from({ length: 5 }).map((_, index) => (
+                  <Star
+                    key={index}
+                    fill="#E64827"
+                    className="text-[#E64827] size-[1rem]"
+                  />
+                ))}
+              </div>
+              <ScrollArea className="h-[5.31rem] text-[#F1F1F1] text-[0.875rem] w-[16.625rem] md:w-[20.625rem]">
+                Had 3 amazing days (and nights) out in the mountains for the
+                Loop. Best experience ever in Vietnam 🇻🇳, but more than anything
+                our tour guide Le Sy was the key to make it special. He is
+                smart, funny, organized and he has very good English, friendly
+                from the beginning to the end and always ready to help. Very
+                good. Recommended for sure, and Sy is a plus!
+              </ScrollArea>
+              <Image
+                src={"/dash-2.svg"}
+                alt="dash"
+                width={220}
+                height={220}
+                className="absolute bottom-1/5 left-0 transform -translate-x-full md:block hidden"
+              />
             </div>
-            <ScrollArea className="h-[5.31rem] text-[#F1F1F1] text-[0.875rem] w-[20.625rem]">
-              Had 3 amazing days (and nights) out in the mountains for the Loop.
-              Best experience ever in Vietnam 🇻🇳, but more than anything our
-              tour guide Le Sy was the key to make it special. He is smart,
-              funny, organized and he has very good English, friendly from the
-              beginning to the end and always ready to help. Very good.
-              Recommended for sure, and Sy is a plus!
-            </ScrollArea>
-            <Image
-              src={"/dash-2.svg"}
-              alt="dash"
-              width={220}
-              height={220}
-              className="absolute bottom-1/5 left-0 transform -translate-x-full"
-            />
           </div>
         </div>
-        <div className="relative z-30 flex flex-col gap-y-[0.75rem] justify-center items-center">
+        <div className="relative z-30 flex flex-col gap-y-[0.75rem] justify-center items-center md:mt-0 mt-[2rem]">
           <p className="text-white font-bold text-[0.875rem]">View us on:</p>
           <div className="flex gap-x-[0.75rem]">
             <Link href="/">
@@ -244,7 +295,7 @@ const Client = () => {
           </div>
         </div>
       </div>
-      <div className="bg-[url(/images/bg-client-1.png)] pb-[8rem] w-full bg-no-repeat bg-cover relative pl-[5rem]">
+      {/* <div className="bg-[url(/images/bg-client-1.png)] pb-[8rem] w-full bg-no-repeat bg-cover relative pl-[5rem]">
         <div
           className="absolute top-0 bottom-0 right-0 left-0"
           style={{
@@ -288,7 +339,7 @@ const Client = () => {
             <TabCarousel />
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };
