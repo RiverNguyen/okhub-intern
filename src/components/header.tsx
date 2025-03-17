@@ -26,6 +26,7 @@ const Header = () => {
   const [isSticky, setIsSticky] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [hasBg, setHasBg] = useState(false);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -76,7 +77,7 @@ const Header = () => {
           />
         </Link>
 
-        <Sheet>
+        <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger asChild>
             <Button
               className={cn(
@@ -125,6 +126,7 @@ const Header = () => {
                                 { href: "/all-tours", label: "All tours" },
                               ].map((tour) => (
                                 <div
+                                  onClick={() => setOpen(false)}
                                   key={tour.href}
                                   className="py-[0.5rem] pr-[1rem] w-fit border-b border-solid border-neutral-300"
                                 >
@@ -136,6 +138,7 @@ const Header = () => {
                         </Accordion>
                       ) : (
                         <Link
+                          onClick={() => setOpen(false)}
                           className="text-white text-[2rem] font-bold"
                           href={item.href || ""}
                         >
