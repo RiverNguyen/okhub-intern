@@ -13,17 +13,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 const AboutPage = () => {
   useEffect(() => {
-    gsap.from(".breadcrumb-section", {
-      scrollTrigger: {
-        trigger: ".breadcrumb-section",
-        start: "top 80%",
-      },
-      y: 30,
-      opacity: 0,
-      duration: 1,
-      ease: "power3.out",
-    });
-
     gsap.from(".pattern-section", {
       scrollTrigger: {
         trigger: ".pattern-section",
@@ -31,7 +20,7 @@ const AboutPage = () => {
       },
       y: 30,
       opacity: 0,
-      duration: 1,
+      duration: 3,
       ease: "power3.out",
     });
 
@@ -40,9 +29,9 @@ const AboutPage = () => {
         trigger: ".ethical-section",
         start: "top 80%",
       },
-      y: 30,
+      y: 50,
       opacity: 0,
-      duration: 1,
+      duration: 5,
       ease: "power3.out",
     });
 
@@ -56,6 +45,12 @@ const AboutPage = () => {
       duration: 1,
       ease: "power3.out",
     });
+
+    return () => {
+      gsap.killTweensOf(".pattern-section");
+      gsap.killTweensOf(".ethical-section");
+      gsap.killTweensOf(".team-section");
+    };
   }, []);
 
   return (
@@ -70,7 +65,7 @@ const AboutPage = () => {
       <div className="ethical-section">
         <Ethical />
       </div>
-      <div className="team-section pl-[5rem]">
+      <div className="team-section pl-[1rem] md:pl-[5rem]">
         <Team aboutPage />
       </div>
     </>
