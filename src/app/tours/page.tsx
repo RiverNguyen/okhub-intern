@@ -1,6 +1,8 @@
 import Image from "next/image";
-import React from "react";
 import BreadcrumbAbout from "./_components/breadcrumb";
+import Trip from "./_components/trip";
+import TypeOfTour from "./_components/type-of-tour";
+import Tours from "./_components/tours";
 
 const TourPage = () => {
   return (
@@ -36,6 +38,11 @@ const TourPage = () => {
         </div>
       </div>
       <BreadcrumbAbout />
+      <Trip />
+      <div className="bg-[#F0F0F0]  w-full py-[4rem] px-[5rem] flex gap-x-[2.675rem]">
+        <TypeOfTour />
+        <Tours />
+      </div>
     </>
   );
 };

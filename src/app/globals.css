@@ -206,6 +206,22 @@ html {
   }
 }
 
+@keyframes leftToRight {
+  0% {
+    right: -2.27806rem;
+  }
+  50% {
+    right: 100%;
+  }
+  100% {
+    right: -2.27806rem;
+  }
+}
+
+.animate-leftToRight {
+  animation: leftToRight 10s linear infinite;
+}
+
 .hidden-x-scroll {
   -ms-overflow-style: none;
   scrollbar-width: none;
