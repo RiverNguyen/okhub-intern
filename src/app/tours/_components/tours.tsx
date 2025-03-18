@@ -15,9 +15,9 @@ const Tours = async ({searchParams}: TourProps) => {
 
   return (
     <div className="flex flex-col gap-y-[2rem]">
-    <div className="grid grid-cols-3 gap-[1.25rem]">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-[1.25rem]">
       {tours.map((tour) => (
-        <CardTour key={tour.id} data={tour} />
+        <CardTour full key={tour.id} data={tour} />
       ))}
     </div>
       <PaginationWithLinks page={page} pageSize={perPage} totalCount={totalTours} />

@@ -19,7 +19,7 @@ const TypeOfTour = () => {
   };
 
   return (
-    <div className="py-[1.9375rem] px-[1.875rem] flex flex-col gap-y-[1.25rem] bg-white h-fit w-[17rem] rounded-[1.5rem]">
+    <div className="py-[1.9375rem] px-[1.875rem] flex-col gap-y-[1.25rem] bg-white h-fit w-[17rem] rounded-[1.5rem] hidden md:flex">
       <p className="uppercase font-bold text-[1rem]">Type of tour</p>
       <Separator />
       <div className="flex flex-col gap-y-[0.75rem]">

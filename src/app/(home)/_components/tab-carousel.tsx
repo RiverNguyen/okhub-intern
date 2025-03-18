@@ -16,8 +16,16 @@ import {
 } from "@/components/ui/tabs";
 import { Dot } from "lucide-react";
 import Image from "next/image";
+import CardTour from "@/components/card-tour";
+import { Tour } from "@/lib/type";
 
-const TabCarousel = () => {
+const TabCarousel = ({
+  TourCard,
+  tour,
+}: {
+  TourCard?: boolean;
+  tour?: Tour[];
+}) => {
   return (
     <>
       <div className="md:block hidden">
@@ -121,30 +129,36 @@ const TabCarousel = () => {
           </TabsContent>
         </Tabs>
       </div>
-      <div className="hidden-x-scroll flex flex-row gap-x-[0.5rem] whitespace-nowrap overflow-x-auto md:overflow-x-visible md:hidden mt-[3rem]">
-        {Array.from({ length: 5 }).map((_, index) => (
-          <div className="p-1" key={index}>
-            <Card className="p-0 rounded-[1.5rem] relative group overflow-hidden w-[16rem]">
-              <CardContent className="p-0">
-                <Image
-                  src={"/images/home/tour.png"}
-                  alt="tour"
-                  width={300}
-                  height={400}
-                  className="object-cover w-full rounded-[1.5rem] group-hover:-translate-y-1/5 transition-transform duration-700"
-                />
-                <div className="py-[0.69rem] text-center group-hover:-translate-y-[5rem] transition-transform duration-700">
-                  <p className="text-[1rem] text-[#E64827] font-bold">
-                    Mr. Thanh Nguyen
-                  </p>
-                  <p className="flex justify-center items-center text-[0.875rem] text-[#262626]">
-                    Tour Leader <Dot />3 years EXP
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        ))}
+      <div className="hidden-x-scroll flex flex-row gap-x-[0.5rem] whitespace-nowrap overflow-x-auto md:overflow-x-visible md:hidden mt-[2rem] md:mt-[3rem]">
+        {TourCard
+          ? tour?.map((tour) => (
+              <div className="p-1" key={tour.id}>
+                <CardTour data={tour} />
+              </div>
+            ))
+          : Array.from({ length: 5 }).map((_, index) => (
+              <div className="p-1" key={index}>
+                <Card className="p-0 rounded-[1.5rem] relative group overflow-hidden w-[16rem]">
+                  <CardContent className="p-0">
+                    <Image
+                      src={"/images/home/tour.png"}
+                      alt="tour"
+                      width={300}
+                      height={400}
+                      className="object-cover w-full rounded-[1.5rem] group-hover:-translate-y-1/5 transition-transform duration-700"
+                    />
+                    <div className="py-[0.69rem] text-center group-hover:-translate-y-[5rem] transition-transform duration-700">
+                      <p className="text-[1rem] text-[#E64827] font-bold">
+                        Mr. Thanh Nguyen
+                      </p>
+                      <p className="flex justify-center items-center text-[0.875rem] text-[#262626]">
+                        Tour Leader <Dot />3 years EXP
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            ))}
       </div>
     </>
   );
