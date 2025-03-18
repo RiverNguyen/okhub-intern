@@ -2,8 +2,9 @@ import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import { MoveRight } from "lucide-react";
+import { Tour } from "@/lib/type";
 
-const CardTour = () => {
+const CardTour = ({ data }: { data: Tour }) => {
   return (
     <Card className="p-0 rounded-[1.5rem] w-[21.3175rem] bg-[url(/images/home/tour.png)] h-[35rem] bg-cover bg-bottom bg-no-repeat relative group overflow-hidden">
       <div
@@ -25,19 +26,19 @@ const CardTour = () => {
                 }}
               />
               <p className="flex items-center text-white gap-x-[0.5rem]">
-                <Image src={"/clock.svg"} alt="clock" width={24} height={24} />4
-                Days 5 Nights
+                <Image src={"/clock.svg"} alt="clock" width={24} height={24} />{" "}
+                {data?.duration}
               </p>
             </div>
             <div className="text-white flex items-center gap-x-[1.25rem]">
               <p className="text-[1.5rem] font-bold flex items-center gap-[0.5rem] ">
-                $199{" "}
+                ${data?.price.self_driving}
                 <span className="text-[0.875rem] font-normal underline">
                   Self - Driving
                 </span>
               </p>
               <p className="text-[1.5rem] font-bold flex items-center gap-[0.5rem]">
-                $199{" "}
+                ${data?.price.local_driver}
                 <span className="text-[0.875rem] font-normal underline">
                   Local Driver
                 </span>
@@ -46,13 +47,14 @@ const CardTour = () => {
           </div>
           <div className="text-white md:block hidden">
             <p className="text-[1.25rem] font-[900] group-hover:underline transform duration-300">
-              Ha Giang Loop tour: Itinerary in 4 Days 5 Nights
+              {data?.title}
             </p>
             <br />
 
             <p className="flex items-center gap-x-[0.25rem] text-[0.875rem] font-bold">
               <Image src={"/room.svg"} alt="room" height={20} width={24} />
-              Accommodation: <span className="font-normal">Phòng Doom</span>
+              Accommodation:{" "}
+              <span className="font-normal">{data?.accommodation}</span>
             </p>
             <p className="flex items-center gap-x-[0.25rem] text-[0.875rem] font-bold">
               <Image
@@ -61,19 +63,17 @@ const CardTour = () => {
                 height={18}
                 width={24}
               />
-              Motorbike: <span className="font-normal">Xe Wave, Vision</span>
+              Motorbike:{" "}
+              <span className="font-normal">{data?.motorbike.join(", ")}</span>
             </p>
             <p className="flex items-center gap-x-[0.25rem] text-[0.875rem] font-bold">
               <Image src={"/user.svg"} alt="room" height={24} width={24} />
               Tour guide:{" "}
-              <span className="font-normal">
-                01 Tour guide with good English
-              </span>
+              <span className="font-normal">{data?.tour_guide}</span>
             </p>
             <p className="flex items-center gap-x-[0.25rem] text-[0.875rem] font-bold">
               <Image src={"/bus.svg"} alt="room" height={24} width={24} />
-              Transport:{" "}
-              <span className="font-normal">Xe VIP, có trung chuyển</span>
+              Transport: <span className="font-normal">{data?.transport}</span>
             </p>
             <button className="px-[2rem] py-[1rem] bg-[#DA4B19] text-white flex justify-center items-center gap-x-[0.5rem] rounded-[1rem] absolute -left-[1rem] mt-[1rem] w-[calc(100%+1rem)]">
               Book Now

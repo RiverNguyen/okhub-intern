@@ -7,8 +7,11 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { londrinaSolid } from "@/configs/font-family";
+import { fetchTours } from "@/lib/api";
 
-const Trip = () => {
+const Trip = async () => {
+  const { tours } = await fetchTours(1, 8);
+
   return (
     <div className="mt-[4.3175rem] px-[5rem] mb-[4rem]">
       <div className="uppercase ">
@@ -28,10 +31,10 @@ const Trip = () => {
         className="w-full relative"
       >
         <CarouselContent>
-          {Array.from({ length: 5 }).map((_, index) => (
-            <CarouselItem key={index} className="basis-1/4 w-[17.6875rem]">
+          {tours.map((tour) => (
+            <CarouselItem key={tour.id} className="basis-1/4 w-[17.6875rem]">
               <div className="p-1">
-                <CardTour />
+                <CardTour data={tour} />
               </div>
             </CarouselItem>
           ))}

@@ -4,7 +4,11 @@ import Trip from "./_components/trip";
 import TypeOfTour from "./_components/type-of-tour";
 import Tours from "./_components/tours";
 
-const TourPage = () => {
+interface TourPageProps {
+  searchParams: { [key: string]: string | undefined };
+}
+
+const TourPage = async ({ searchParams }: TourPageProps) => {
   return (
     <>
       <div className="bg-[url(/tours/images/banner.png)] bg-no-repeat bg-center md:bg-cover h-[54rem] md:h-[43.75rem] relative">
@@ -41,7 +45,7 @@ const TourPage = () => {
       <Trip />
       <div className="bg-[#F0F0F0]  w-full py-[4rem] px-[5rem] flex gap-x-[2.675rem]">
         <TypeOfTour />
-        <Tours />
+        <Tours searchParams={await searchParams} />
       </div>
     </>
   );
