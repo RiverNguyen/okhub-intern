@@ -1,6 +1,5 @@
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
-import { MoveRight } from "lucide-react";
 
 const TourBooking = () => {
   const tourInfo = [
@@ -16,7 +15,10 @@ const TourBooking = () => {
   ];
 
   return (
-    <div className="flex flex-col gap-[0.75rem] text-left">
+    <div className="flex flex-col gap-[0.75rem] text-left -mt-[2.3rem] w-[32.06rem]">
+      <p className="text-white/70 text-[1rem] font-bold">
+        CONFIRMED TOUR BOOKING:
+      </p>
       <div className="grid grid-cols-3 rounded-[0.5rem] bg-[#F8F8F8]">
         <div className="col-span-1">
           {tourInfo.map((info, index) => (
@@ -113,19 +115,6 @@ const TourBooking = () => {
           <p>Total amount:</p>
           <p>$584,01</p>
         </div>
-      </div>
-      <div className="flex flex-col md:flex-row uppercase justify-between gap-[0.5rem]">
-        <button
-          form="bookForm"
-          type="submit"
-          className="w-full flex py-[1rem] px-[2rem] bg-[#E64827] text-white text-[0.875rem] font-bold rounded-[0.5rem] items-center justify-center gap-[0.5rem] group"
-        >
-          BOOK NOW, Pay later{" "}
-          <MoveRight className="group-hover:translate-x-1 transform duration-300" />
-        </button>
-        <button className="w-full flex py-[1rem] px-[2rem] border border-[#E64827] text-[#E64827] text-[0.875rem] font-bold rounded-[0.5rem] items-center justify-center gap-[0.5rem]">
-          Pay Now
-        </button>
       </div>
     </div>
   );

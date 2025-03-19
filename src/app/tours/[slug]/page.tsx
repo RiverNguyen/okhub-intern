@@ -2,9 +2,9 @@ import { Separator } from "@/components/ui/separator";
 import { londrinaSolid } from "@/configs/font-family";
 import { Dot } from "lucide-react";
 import Image from "next/image";
-import React from "react";
 import BreadcrumbAbout from "./_components/breadcrumb";
 import TourDetail from "./_components/tour-detail";
+import FormBooking from "./_components/form-booking";
 
 const TourDetailPage = () => {
   return (
@@ -159,6 +159,7 @@ const TourDetailPage = () => {
       </div>
       <BreadcrumbAbout />
       <TourDetail />
+      <FormBooking />
     </>
   );
 };
