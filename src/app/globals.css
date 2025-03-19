@@ -222,6 +222,24 @@ html {
   animation: leftToRight 10s linear infinite;
 }
 
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+.spinner {
+  animation: spin 8s linear infinite;
+}
+
+.swiper-slide-active {
+  border: 3px solid #24704e;
+  transition: border 0.3s ease;
+}
+
 .hidden-x-scroll {
   -ms-overflow-style: none;
   scrollbar-width: none;
