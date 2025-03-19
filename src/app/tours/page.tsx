@@ -1,8 +1,8 @@
 import Image from "next/image";
 import BreadcrumbAbout from "./_components/breadcrumb";
+import Tours from "./_components/tours";
 import Trip from "./_components/trip";
 import TypeOfTour from "./_components/type-of-tour";
-import Tours from "./_components/tours";
 
 interface TourPageProps {
   searchParams: { [key: string]: string | undefined };

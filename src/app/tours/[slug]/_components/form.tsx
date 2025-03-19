@@ -36,6 +36,7 @@ import {
   ChevronDownIcon,
   ChevronUpIcon,
 } from "lucide-react";
+import Image from "next/image";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
@@ -535,17 +536,33 @@ const MyForm = () => {
             />
           </div>
         </div>
-        <div className="flex flex-col md:flex-row uppercase gap-[0.5rem]">
-          <button
-            form="bookForm"
-            type="submit"
-            className="w-fit hover:cursor-pointer flex py-[1rem] px-[4.85rem] bg-[#E64827] text-white text-[0.875rem] font-bold rounded-[0.5rem] items-center justify-center gap-[0.5rem] group"
-          >
-            Pay Now
-          </button>
-          <button className="w-fit hover:cursor-pointer flex py-[1rem] px-[2rem] border border-[#E64827] text-[#E64827] text-[0.875rem] font-bold rounded-[0.5rem] items-center justify-center gap-[0.5rem]">
-            Book & Pay Later
-          </button>
+        <div className="flex gap-[1.875rem]">
+          <div className="flex flex-col md:flex-row uppercase gap-[0.5rem]">
+            <button
+              form="bookForm"
+              type="submit"
+              className="w-fit hover:cursor-pointer flex py-[1rem] px-[4.85rem] bg-[#E64827] text-white text-[0.875rem] font-bold rounded-[0.5rem] items-center justify-center gap-[0.5rem] group"
+            >
+              Pay Now
+            </button>
+            <button className="w-fit hover:cursor-pointer flex py-[1rem] px-[2rem] border border-[#E64827] text-[#E64827] text-[0.875rem] font-bold rounded-[0.5rem] items-center justify-center gap-[0.5rem]">
+              Book & Pay Later
+            </button>
+          </div>
+          <div className="flex gap-[0.5rem]">
+            <Image
+              src={"/tours/svg/visa.svg"}
+              alt="visa"
+              width={35}
+              height={22}
+            />
+            <Image
+              src={"/tours/svg/payment.svg"}
+              alt="visa"
+              width={35}
+              height={22}
+            />
+          </div>
         </div>
       </form>
     </Form>

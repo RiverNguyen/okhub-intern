@@ -5,6 +5,9 @@ import Image from "next/image";
 import BreadcrumbAbout from "./_components/breadcrumb";
 import TourDetail from "./_components/tour-detail";
 import FormBooking from "./_components/form-booking";
+import FAQ from "./_components/faq";
+import Team from "@/components/team";
+import Trip from "../_components/trip";
 
 const TourDetailPage = () => {
   return (
@@ -17,7 +20,7 @@ const TourDetailPage = () => {
               "linear-gradient(180deg, rgba(18, 39, 24, 0.00) 50%, #122718 100%)",
           }}
         />
-        <div className="z-10 flex md:flex-row flex-col justify-center gap-x-[46rem] items-center px-[1rem] md:px-[5rem] pt-[8.7rem]">
+        <div className="z-10 md:flex md:flex-row flex-col justify-center gap-x-[46rem] items-center px-[1rem] md:px-[5rem] pt-[8.7rem] hidden">
           <div className="">
             <div className="about-title absolute bottom-[2rem] left-[5rem]">
               <div className="flex items-center">
@@ -160,6 +163,11 @@ const TourDetailPage = () => {
       <BreadcrumbAbout />
       <TourDetail />
       <FormBooking />
+      <FAQ />
+      <div className="pl-[5rem] mt-[5.62rem]">
+        <Team aboutPage />
+      </div>
+      <Trip color="#103223" />
     </>
   );
 };

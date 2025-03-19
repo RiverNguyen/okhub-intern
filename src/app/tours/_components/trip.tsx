@@ -9,18 +9,26 @@ import {
 } from "@/components/ui/carousel";
 import { londrinaSolid } from "@/configs/font-family";
 import { fetchTours } from "@/lib/api";
+import { cn } from "@/lib/utils";
 
-const Trip = async () => {
+const Trip = async ({ color }: { color?: string }) => {
   const { tours } = await fetchTours(1, 8);
 
   return (
     <div className="mt-[4.3175rem] px-[1rem] md:px-[5rem] mb-[4rem]">
       <div className="uppercase mb-[2rem]">
-        <h3 className="text-[#262626] opacity-40 text-[0.875rem] md:text-[1.125rem] font-bold">
+        <h3
+          className={cn(
+            `text-[#262626] opacity-40 text-[0.875rem] md:text-[1.125rem] font-bold`
+          )}
+        >
           Explore
         </h3>
         <h1
-          className={`${londrinaSolid.className} text-[#262626] font-[900] text-[2.5rem] md:text-[3.5rem]`}
+          className={cn(
+            `${londrinaSolid.className} font-[900] text-[2.5rem] md:text-[3.5rem]`
+          )}
+          style={{ color: `${color}` || "#262626" }}
         >
           Best trips <br className="md:hidden block" /> for you
         </h1>

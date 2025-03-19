@@ -6,7 +6,7 @@ import TourContent from "./tour-content";
 
 const TourDetail = () => {
   return (
-    <div className="py-[8.175rem] pl-[5rem] flex items-center overflow-y-hidden">
+    <div className="py-[8.175rem] pl-[5rem] hidden md:flex items-center overflow-y-hidden">
       <Image
         src={"/images/home/tour-2.png"}
         alt="tour"
