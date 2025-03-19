@@ -42,7 +42,7 @@ import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import * as z from "zod";
 
-const MyForm = () => {
+const FormTourDetail = () => {
   const [animate] = useAutoAnimate();
   const [selfDriving, setSelfDriving] = useState(0);
   const [localDriving, setLocalDriving] = useState(0);
@@ -569,4 +569,4 @@ const MyForm = () => {
   );
 };
 
-export default MyForm;
+export default FormTourDetail;

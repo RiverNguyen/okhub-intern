@@ -2,14 +2,21 @@ import { Separator } from "@/components/ui/separator";
 import { londrinaSolid } from "@/configs/font-family";
 import { Dot } from "lucide-react";
 import Image from "next/image";
+import Marquee from "react-fast-marquee";
 import BreadcrumbAbout from "./_components/breadcrumb";
 import TourDetail from "./_components/tour-detail";
 import FormBooking from "./_components/form-booking";
 import FAQ from "./_components/faq";
 import Team from "@/components/team";
 import Trip from "../_components/trip";
+import BannerMobile from "./_components/banner-mobile";
 
 const TourDetailPage = () => {
+  const images = Array.from(
+    { length: 5 },
+    (_, index) => `/images/home/gallery-${index + 1}.png`
+  );
+
   return (
     <>
       <div className="bg-[url(/tours/images/banner.png)] bg-no-repeat bg-center md:bg-cover h-[25rem] md:h-[43.75rem] relative">
@@ -160,11 +167,35 @@ const TourDetailPage = () => {
           </div>
         </div>
       </div>
+      <div className="md:hidden block mt-[0.25rem]">
+        <Marquee
+          speed={100}
+          gradient={false}
+          pauseOnHover={false}
+          className="ml-0 md:ml-[13.12rem]"
+          loop={0}
+        >
+          {images.map((src, index) => (
+            <div
+              key={`top-${index}`}
+              className="relative w-[10rem] h-[6rem] mx-[0.25rem] group"
+            >
+              <Image
+                src={src}
+                alt={`gallery-top-${index + 1}`}
+                layout="fill"
+                className="object-center object-cover rounded-[1rem] hover:cursor-pointer group"
+              />
+            </div>
+          ))}
+        </Marquee>
+      </div>
       <BreadcrumbAbout />
+      <BannerMobile />
       <TourDetail />
       <FormBooking />
       <FAQ />
-      <div className="pl-[5rem] mt-[5.62rem]">
+      <div className="pl-[1rem] md:pl-[5rem] mt-[3rem] md:mt-[5.62rem]">
         <Team aboutPage />
       </div>
       <Trip color="#103223" />

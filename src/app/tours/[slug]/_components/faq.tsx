@@ -10,7 +10,7 @@ import VideoPopup from "./video-popup";
 
 const FAQ = () => {
   return (
-    <div className="px-[5rem] mt-[3rem]">
+    <div className="px-[5rem] mt-[3rem] md:block hidden">
       <h2
         className={`${londrinaSolid.className} text-[3.5rem] font-[900] text-[#262626]`}
       >

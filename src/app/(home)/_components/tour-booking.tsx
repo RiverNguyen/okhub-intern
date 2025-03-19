@@ -2,7 +2,7 @@ import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import { MoveRight } from "lucide-react";
 
-const TourBooking = () => {
+const TourBookingHome = () => {
   const tourInfo = [
     "Type of tour",
     "Name",
@@ -131,4 +131,4 @@ const TourBooking = () => {
   );
 };
 
-export default TourBooking;
+export default TourBookingHome;

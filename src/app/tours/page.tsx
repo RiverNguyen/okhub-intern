@@ -41,6 +41,7 @@ const TourPage = async ({ searchParams }: TourPageProps) => {
           </div>
         </div>
       </div>
+
       <BreadcrumbAbout />
       <Trip />
       <div className="bg-[#F0F0F0] w-full px-[1rem] py-[2rem] md:py-[4rem] md:px-[5rem] md:flex gap-x-[2.675rem]">
