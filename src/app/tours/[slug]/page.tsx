@@ -1,15 +1,15 @@
+import BreadcrumbContainer from "@/components/breadcrumb";
+import Team from "@/components/team";
 import { Separator } from "@/components/ui/separator";
 import { londrinaSolid } from "@/configs/font-family";
 import { Dot } from "lucide-react";
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
-import BreadcrumbAbout from "./_components/breadcrumb";
-import TourDetail from "./_components/tour-detail";
-import FormBooking from "./_components/form-booking";
-import FAQ from "./_components/faq";
-import Team from "@/components/team";
 import Trip from "../_components/trip";
 import BannerMobile from "./_components/banner-mobile";
+import FAQ from "./_components/faq";
+import FormBooking from "./_components/form-booking";
+import TourDetail from "./_components/tour-detail";
 
 const TourDetailPage = () => {
   const images = Array.from(
@@ -190,7 +190,10 @@ const TourDetailPage = () => {
           ))}
         </Marquee>
       </div>
-      <BreadcrumbAbout />
+      <BreadcrumbContainer
+        first="Tours"
+        second="Ha Giang Loop tour: Itinerary in 3 Days 4 Nights"
+      />
       <BannerMobile />
       <TourDetail />
       <FormBooking />

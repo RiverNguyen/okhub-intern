@@ -8,6 +8,7 @@ import Banner from "./_components/banner";
 import BreadcrumbAbout from "./_components/breadcrumb";
 import Ethical from "./_components/ethical";
 import Pattern from "./_components/pattern";
+import BreadcrumbContainer from "@/components/breadcrumb";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -57,7 +58,7 @@ const AboutPage = () => {
     <>
       <Banner />
       <div className="breadcrumb-section">
-        <BreadcrumbAbout />
+        <BreadcrumbContainer first="About Us" />
       </div>
       <div className="pattern-section">
         <Pattern />
