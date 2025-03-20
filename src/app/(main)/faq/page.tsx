@@ -70,17 +70,17 @@ const FaqPage = () => {
         </div>
       </div>
 
-      <div className="px-[5rem] mt-[4.5rem]">
-        <h2 className="text-[#262626] font-bold text-[2.5rem] mb-[2.8125rem]">
+      <div className="px-[1rem] md:px-[5rem] mt-[4.5rem]">
+        <h2 className="text-[#262626] font-bold text-[1.5rem] md:text-[2.5rem] mb:[1.5rem] md:mb-[2.8125rem]">
           Frequently asked Questions
         </h2>
-        <div className="flex justify-between ">
+        <div className="flex justify-between gap-y-[3.625rem] md:flex-row flex-col">
           <AccordionContainer />
           <FormQuestion />
         </div>
       </div>
 
-      <div className="px-[5rem] mt-[5rem]">
+      <div className="px-[1rem] md:px-[5rem] mt-[5rem]">
         <Team aboutPage />
       </div>
       <Trip />

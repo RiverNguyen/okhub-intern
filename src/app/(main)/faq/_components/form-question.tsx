@@ -60,7 +60,7 @@ export default function FormQuestion() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="w-[35.3125rem] space-y-[1rem]"
+        className="md:w-[35.3125rem] space-y-[1rem]"
       >
         <h2 className="mb-[2rem] text-[#262626] font-bold text-[1.25rem]">
           Ask a different question

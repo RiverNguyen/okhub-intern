@@ -52,7 +52,7 @@ const Card = ({ title }: { title: string }) => {
               onClick={handleClose}
             />
           </div>
-          <p className="text-[0.875rem] text-[#6A6A6A] h-[14rem] md:h-auto max-w-[14.1875rem] md:w-auto tracking-[0.02rem] ">
+          <p className="text-[0.875rem] text-[#6A6A6A]  max-w-[14.1875rem] md:w-auto tracking-[0.02rem] line-clamp-[8]">
             Included: Experienced tour guide Bike rentals (semi-automatic or
             manual) Fuel for the bikes Accommodation (private rooms available)
             Meals (breakfast, lunch, and dinner) Entrance fees to attractions

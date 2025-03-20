@@ -10,7 +10,7 @@ const AccordionContainer = () => {
     <Accordion
       type="single"
       collapsible
-      className="w-[42.4485rem] flex flex-col gap-y-[1rem]"
+      className="md:w-[42.4485rem] flex flex-col gap-y-[1rem]"
     >
       <AccordionItem className="border-none" value="item-1">
         <AccordionTriggerFaq>What is included or excluded?</AccordionTriggerFaq>
