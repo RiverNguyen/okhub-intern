@@ -1,6 +1,7 @@
 import Footer from "@/components/footer";
 import FixedButton from "@/components/fixed-button";
 import Header from "@/components/header";
+import { Toaster } from "@/components/ui/sonner";
 
 export default function MainLayout({
   children,
@@ -13,6 +14,7 @@ export default function MainLayout({
       {children}
       <Footer />
       <FixedButton />
+      <Toaster />
     </>
   );
 }
