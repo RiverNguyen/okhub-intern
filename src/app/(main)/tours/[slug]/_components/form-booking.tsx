@@ -8,8 +8,8 @@ import Image from "next/image";
 import { useRef } from "react";
 import FormTourDetail from "./form";
 import TourBooking from "./tour-booking";
-import MyForm from "@/app/(home)/_components/form";
-import TourBookingHome from "@/app/(home)/_components/tour-booking";
+import MyForm from "@/app/(main)/_components/form";
+import TourBookingHome from "@/app/(main)/_components/tour-booking";
 
 gsap.registerPlugin(MotionPathPlugin);
 

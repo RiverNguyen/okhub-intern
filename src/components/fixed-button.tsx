@@ -1,6 +1,6 @@
 "use client";
 
-import FormPopup from "@/app/(home)/_components/form-popup";
+import FormPopup from "@/app/(main)/_components/form-popup";
 import Image from "next/image";
 import React from "react";
 

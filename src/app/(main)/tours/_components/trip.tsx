@@ -1,4 +1,4 @@
-import TabCarousel from "@/app/(home)/_components/tab-carousel";
+import TabCarousel from "@/app/(main)/_components/tab-carousel";
 import CardTour from "@/components/card-tour";
 import {
   Carousel,

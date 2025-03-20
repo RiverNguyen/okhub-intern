@@ -12,18 +12,18 @@ const Card = ({ title }: { title: string }) => {
   return (
     <div className="mt-[3rem]">
       <div
-        className="p-[2rem] size-[21.75rem] rounded-[1.5rem] bg-[#F8EAE4] relative overflow-hidden"
+        className="size-[16.8125rem] md:size-[21.75rem] rounded-[1.5rem] bg-[#F8EAE4] relative overflow-hidden"
         onMouseEnter={handleOpen}
       >
         <div
           className={cn(
             `transition-opacity duration-1000`,
-            isOpen ? "opacity-0" : "opacity-100"
+            isOpen ? "opacity-0" : "opacity-0 md:opacity-100"
           )}
         >
           <button
             className={cn(
-              `p-[0.75rem] bg-[#E64827] rounded-[0.5rem] absolute right-[2rem] top-[2rem] transition-transform duration-500 hover:cursor-pointer`,
+              `p-[0.75rem] bg-[#E64827] rounded-[0.5rem] absolute right-[2rem] top-[2rem] transition-transform duration-500 hover:cursor-pointer md:block hidden`,
               isOpen ? "translate-x-full" : "translate-x-0"
             )}
             onClick={handleOpen}
@@ -41,18 +41,18 @@ const Card = ({ title }: { title: string }) => {
         </div>
         <div
           className={cn(
-            `absolute p-[2rem] inset-0  transform transition-all duration-500 bg-[#F9F8F7] rounded-[1.5rem]`,
-            isOpen ? "opacity-100" : "opacity-0"
+            `absolute p-[2rem] inset-0 transform transition-all duration-500 bg-[#F8EAE4] md:bg-[#F9F8F7] rounded-[1.5rem]`,
+            isOpen ? "opacity-100" : "opacity-100 md:opacity-0"
           )}
         >
-          <div className="flex justify-between items-center text-black font-tripsans font-bold leading-1.2 text-1.125 mb-6">
+          <div className="flex justify-between items-center text-black font-bold leading-1.2 text-1.125 mb-[0.75rem] md:mb-6">
             <p>What is included ?</p>
             <XIcon
-              className="text-[#6A6A6A] size-3 hover:cursor-pointer"
+              className="text-[#6A6A6A] size-3 hover:cursor-pointer md:block hidden"
               onClick={handleClose}
             />
           </div>
-          <p className="text-[0.875rem] text-[#6A6A6A]  tracking-[0.02rem]">
+          <p className="text-[0.875rem] text-[#6A6A6A] h-[14rem] md:h-auto max-w-[14.1875rem] md:w-auto tracking-[0.02rem] ">
             Included: Experienced tour guide Bike rentals (semi-automatic or
             manual) Fuel for the bikes Accommodation (private rooms available)
             Meals (breakfast, lunch, and dinner) Entrance fees to attractions

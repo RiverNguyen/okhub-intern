@@ -1,7 +1,7 @@
 import { londrinaSolid } from "@/configs/font-family";
 import { MoveRight } from "lucide-react";
 import React from "react";
-import TabCarousel from "../app/(home)/_components/tab-carousel";
+import TabCarousel from "../app/(main)/_components/tab-carousel";
 import { cn } from "@/lib/utils";
 
 const Team = ({ aboutPage }: { aboutPage?: boolean }) => {

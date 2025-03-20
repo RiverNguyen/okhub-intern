@@ -26,7 +26,7 @@ const CardTour = ({ data, full }: { data: Tour; full?: boolean }) => {
           }}
         />
         <CardContent className="p-0 rounded-[1.5rem]">
-          <div className="absolute group-hover:bottom-[4.4125rem] duration-500 transform -bottom-[5.25rem] left-[1rem] flex flex-col gap-y-[0.8125rem]">
+          <div className="absolute group-hover:bottom-[4.4125rem] duration-500 transform bottom-0 md:-bottom-[5.25rem] left-[1rem] flex flex-col gap-y-[0.8125rem]">
             <div className="absolute group-hover:-top-[22rem] duration-500 transform -top-[5rem] md:-top-[6rem]">
               <div className="relative w-fit group-hover:opacity-0 duration-500 transform border border-white/50 mb-[0.8125rem] px-[0.5rem] md:px-[0.75rem] py-[0.25rem] md:py-[0.38rem] bg-white/20 rounded-full backdrop-blur-xs overflow-hidden">
                 <div
@@ -66,38 +66,39 @@ const CardTour = ({ data, full }: { data: Tour; full?: boolean }) => {
                 {data?.title}
               </p>
               <br />
-
-              <p className="flex items-center gap-x-[0.25rem] text-[0.875rem] font-bold">
-                <Image src={"/room.svg"} alt="room" height={20} width={24} />
-                Accommodation:{" "}
-                <span className="font-normal">{data?.accommodation}</span>
-              </p>
-              <p className="flex items-center gap-x-[0.25rem] text-[0.875rem] font-bold">
-                <Image
-                  src={"/motorbike.svg"}
-                  alt="motorbike"
-                  height={18}
-                  width={24}
-                />
-                Motorbike:{" "}
-                <span className="font-normal">
-                  {data?.motorbike.join(", ")}
-                </span>
-              </p>
-              <p className="flex items-center gap-x-[0.25rem] text-[0.875rem] font-bold">
-                <Image src={"/user.svg"} alt="room" height={24} width={24} />
-                Tour guide:{" "}
-                <span className="font-normal">{data?.tour_guide}</span>
-              </p>
-              <p className="flex items-center gap-x-[0.25rem] text-[0.875rem] font-bold">
-                <Image src={"/bus.svg"} alt="room" height={24} width={24} />
-                Transport:{" "}
-                <span className="font-normal">{data?.transport}</span>
-              </p>
-              <button className="px-[2rem] py-[1rem] bg-[#DA4B19] text-white flex justify-center items-center gap-x-[0.5rem] rounded-[1rem] absolute -left-[1rem] mt-[1rem] w-[calc(100%+1rem)]">
-                Book Now
-                <MoveRight />
-              </button>
+              <div className="md:block hidden">
+                <p className="flex items-center gap-x-[0.25rem] text-[0.875rem] font-bold">
+                  <Image src={"/room.svg"} alt="room" height={20} width={24} />
+                  Accommodation:{" "}
+                  <span className="font-normal">{data?.accommodation}</span>
+                </p>
+                <p className="flex items-center gap-x-[0.25rem] text-[0.875rem] font-bold">
+                  <Image
+                    src={"/motorbike.svg"}
+                    alt="motorbike"
+                    height={18}
+                    width={24}
+                  />
+                  Motorbike:{" "}
+                  <span className="font-normal">
+                    {data?.motorbike.join(", ")}
+                  </span>
+                </p>
+                <p className="flex items-center gap-x-[0.25rem] text-[0.875rem] font-bold">
+                  <Image src={"/user.svg"} alt="room" height={24} width={24} />
+                  Tour guide:{" "}
+                  <span className="font-normal">{data?.tour_guide}</span>
+                </p>
+                <p className="flex items-center gap-x-[0.25rem] text-[0.875rem] font-bold">
+                  <Image src={"/bus.svg"} alt="room" height={24} width={24} />
+                  Transport:{" "}
+                  <span className="font-normal">{data?.transport}</span>
+                </p>
+                <button className="px-[2rem] py-[1rem] bg-[#DA4B19] text-white flex justify-center items-center gap-x-[0.5rem] rounded-[1rem] absolute -left-[1rem] mt-[1rem] w-[calc(100%+1rem)]">
+                  Book Now
+                  <MoveRight />
+                </button>
+              </div>
             </div>
           </div>
         </CardContent>

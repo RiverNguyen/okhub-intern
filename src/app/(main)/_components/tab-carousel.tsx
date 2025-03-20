@@ -129,7 +129,7 @@ const TabCarousel = ({
           </TabsContent>
         </Tabs>
       </div>
-      <div className="hidden-x-scroll flex flex-row gap-x-[0.5rem] whitespace-nowrap overflow-x-auto md:overflow-x-visible md:hidden mt-[2rem] md:mt-[3rem]">
+      <div className="hidden-x-scroll flex flex-row gap-x-[0.5rem]  overflow-x-auto md:overflow-x-visible md:hidden mt-[2rem] md:mt-[3rem]">
         {TourCard
           ? tour?.map((tour) => (
               <div className="p-1" key={tour.id}>

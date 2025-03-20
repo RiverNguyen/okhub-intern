@@ -3,7 +3,7 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect } from "react";
-import Team from "../../components/team";
+import Team from "../../../components/team";
 import Banner from "./_components/banner";
 import BreadcrumbAbout from "./_components/breadcrumb";
 import Ethical from "./_components/ethical";
