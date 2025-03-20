@@ -23,10 +23,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={tripsans.className}>
-      <body>
+    <html lang="en" suppressHydrationWarning className={tripsans.className}>
+      <body suppressHydrationWarning>
         <Header />
-
         {children}
         <Footer />
         <FixedButton />
