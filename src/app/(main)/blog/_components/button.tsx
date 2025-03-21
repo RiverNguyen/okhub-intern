@@ -32,7 +32,7 @@ const BlogButton = () => {
     },
   ];
   return (
-    <div className="flex justify-center items-center gap-x-[0.9375rem] mt-[1rem]">
+    <div className="flex justify-center items-center gap-x-[0.9375rem] pl-[17rem] md:pl-0 mt-[1rem] overflow-x-auto hidden-x-scroll">
       {buttonLink.map((item, index) => (
         <Link
           key={index}
