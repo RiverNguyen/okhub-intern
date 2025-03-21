@@ -28,7 +28,7 @@ const HomeImage = () => {
       .fromTo(
         secondImageRef.current,
         { opacity: 0, scale: 0.5, display: "block" },
-        { opacity: 1, scale: 0.8, duration: 1.5 }
+        { opacity: 1, scale: 0.8, duration: 1.3 }
       )
       .to(secondImageRef.current, {
         scale: 15,

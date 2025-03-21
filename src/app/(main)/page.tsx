@@ -11,7 +11,7 @@ import Weather from "./_components/weather";
 const HomePage = () => {
   return (
     <>
-      <div className=" h-[49.25rem] bg-[url(/images/home/sheet-bg.png)] bg-cover bg-no-repeat relative z-10 overflow-hidden">
+      <div className=" h-[53.25rem] bg-[url(/images/home/sheet-bg.png)] bg-cover bg-no-repeat relative z-10 overflow-hidden">
         <div className="bg-[#0F492B]/90 absolute top-0 right-0 bottom-0 left-0 z-20" />
         <div className="px-[5rem] py-[1.5rem]">
           <span className="text-white rotate-90 absolute left-0 top-1/2 -translate-y-1/2 text-center z-30 text-[0.75rem] font-extrabold">
@@ -26,7 +26,7 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-        <div className="hidden justify-center items-center relative z-40 md:flex">
+        <div className="hidden justify-center items-center top-[3.5rem] relative z-40 md:flex">
           <FormHome />
         </div>
         <div className="relative z-30">
