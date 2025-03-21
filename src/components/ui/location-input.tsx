@@ -88,7 +88,7 @@ const LocationSelector = ({
 
   // Cast imported JSON data to their respective types
   const countriesData = countries as CountryProps[];
-  const statesData = states as StateProps[];
+  const statesData = states as unknown as StateProps[];
 
   // Filter states for selected country
   const availableStates = statesData.filter(

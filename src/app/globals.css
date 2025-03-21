@@ -163,6 +163,20 @@ html {
   border-radius: 10px;
 }
 
+.scroll-green::-webkit-scrollbar-thumb {
+  background: #19543a;
+  border-radius: 10px;
+}
+
+.scroll-green::-webkit-scrollbar {
+  width: 2px;
+}
+
+.scroll-green::-webkit-scrollbar-track {
+  background: #0c271b;
+  border-radius: 10px;
+}
+
 /* 639.98 */
 /* 4.267vw */
 
