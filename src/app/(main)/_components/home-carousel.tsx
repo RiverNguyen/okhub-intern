@@ -101,6 +101,10 @@ const HomeCarousel = () => {
         ease: "power2.out",
       });
     }
+
+    return () => {
+      gsap.killTweensOf(locationRef.current);
+    };
   }, [current]);
 
   return (

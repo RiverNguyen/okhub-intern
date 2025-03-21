@@ -104,7 +104,7 @@ const Gallery = () => {
           </Marquee>
         </div>
         <Marquee
-          speed={200}
+          speed={150}
           gradient={false}
           pauseOnHover={false}
           play={!isPaused}
@@ -143,7 +143,7 @@ const Gallery = () => {
         </Marquee>
 
         <Marquee
-          speed={200}
+          speed={150}
           gradient={false}
           pauseOnHover={false}
           play={!isPaused}
