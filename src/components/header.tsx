@@ -112,9 +112,19 @@ const Header = () => {
                       {item.name === "Tour" ? (
                         <Accordion type="single" collapsible className="w-full">
                           <AccordionItem value="item-1">
-                            <AccordionTriggerCustom className="text-white text-[2rem] font-bold p-0">
-                              Tour
+                            <AccordionTriggerCustom className="text-white text-[2rem] gap-0 font-bold p-0 flex items-center group transition-all duration-500">
+                              <span className="inline-block w-0 overflow-hidden group-hover:w-10 transition-all duration-500">
+                                <Image
+                                  src="/arrow-marquee.svg"
+                                  alt="arrow"
+                                  width={40}
+                                  height={40}
+                                  className="transform -translate-x-10 group-hover:-translate-x-1 transition-all duration-500"
+                                />
+                              </span>
+                              <span className="mr-[1rem] p-0">Tour</span>
                             </AccordionTriggerCustom>
+
                             <AccordionContent className="opacity-80 text-white font-bold text-[1.25rem]">
                               {[
                                 {
@@ -123,7 +133,7 @@ const Header = () => {
                                 },
                                 { href: "/standard", label: "Standard" },
                                 { href: "/premium", label: "Premium" },
-                                { href: "/all-tours", label: "All tours" },
+                                { href: "/tours", label: "All tours" },
                               ].map((tour) => (
                                 <div
                                   onClick={() => setOpen(false)}
@@ -139,10 +149,19 @@ const Header = () => {
                       ) : (
                         <Link
                           onClick={() => setOpen(false)}
-                          className="text-white text-[2rem] font-bold"
+                          className="text-white text-[2rem] font-bold flex items-center group transition-all duration-500"
                           href={item.href || ""}
                         >
-                          {item.name}
+                          <span className="inline-block w-0 overflow-hidden group-hover:w-10 transition-all duration-500">
+                            <Image
+                              src={"/arrow-marquee.svg"}
+                              alt="arrow"
+                              width={40}
+                              height={40}
+                              className="transform -translate-x-10 group-hover:-translate-x-1 transition-all duration-500"
+                            />
+                          </span>
+                          <span>{item.name}</span>
                         </Link>
                       )}
                       <Separator className="mt-[0.5rem] opacity-20 w-[40.125rem]" />
