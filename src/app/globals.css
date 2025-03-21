@@ -249,7 +249,34 @@ html {
   animation: spin 8s linear infinite;
 }
 
-.swiper-slide-active {
+@keyframes shakeX {
+  0% {
+    transform: translateX(-3px);
+  }
+  50% {
+    transform: translateX(6px);
+  }
+  100% {
+    transform: translateX(-3px);
+  }
+}
+
+.shake {
+  animation: shakeX 1.5s ease-in-out infinite;
+}
+
+.marquee .swiper-slide-active {
+  border: 2px solid #fff;
+  border-radius: 1rem;
+  box-sizing: border-box;
+  transition: border 0.2s linear;
+}
+
+.marquee .swiper-wrapper {
+  transition-timing-function: linear !important;
+}
+
+.tour-content .swiper-slide-active {
   border: 3px solid #24704e;
   transition: border 0.3s ease;
 }

@@ -10,6 +10,7 @@ import BannerMobile from "./_components/banner-mobile";
 import FAQ from "./_components/faq";
 import FormBooking from "./_components/form-booking";
 import TourDetail from "./_components/tour-detail";
+import MarqueeVertical from "./_components/marque-vertical";
 
 const TourDetailPage = () => {
   const images = Array.from(
@@ -166,6 +167,7 @@ const TourDetailPage = () => {
             />
           </div>
         </div>
+        <MarqueeVertical />
       </div>
       <div className="md:hidden block mt-[0.25rem]">
         <Marquee
