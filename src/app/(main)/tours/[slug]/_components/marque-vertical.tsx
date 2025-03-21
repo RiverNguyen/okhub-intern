@@ -24,7 +24,7 @@ const MarqueeVertical = () => {
   if (!isMounted) return null;
 
   return (
-    <div className="absolute z-30 right-0 top-0 h-full w-[13rem] marquee">
+    <div className="absolute z-30 right-0 top-0 h-full w-[13rem] marquee md:block hidden">
       <Swiper
         direction="vertical"
         slidesPerView={6.5}

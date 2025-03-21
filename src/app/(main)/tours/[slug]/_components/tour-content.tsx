@@ -8,15 +8,20 @@ import "swiper/css/pagination";
 import Image from "next/image";
 import TourAlert from "./tour-alert";
 
-const TourContent = () => {
+interface TourContentProps {
+  onSlideChange: (index: number) => void;
+}
+
+const TourContent = ({ onSlideChange }: TourContentProps) => {
   return (
-    <div className="tour-content">
+    <div className="tour-content mt-[3rem]">
       <Swiper
         direction="vertical"
         slidesPerView={1.5}
         spaceBetween={24}
         mousewheel={{ forceToAxis: true }}
         modules={[Mousewheel, Pagination]}
+        onSlideChange={(swiper) => onSlideChange(swiper.activeIndex)}
         className="h-full w-full"
       >
         <SwiperSlide className="slide-item p-[1.875rem] relative flex flex-col gap-[1.125rem] bg-[#F5F5F5] rounded-[1.5rem] overflow-y-hidden">

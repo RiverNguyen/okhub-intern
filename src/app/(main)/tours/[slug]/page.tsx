@@ -20,7 +20,7 @@ const TourDetailPage = () => {
 
   return (
     <>
-      <div className="bg-[url(/tours/images/banner.png)] bg-no-repeat bg-center md:bg-cover h-[25rem] md:h-[43.75rem] relative">
+      <div className="bg-[url(/tours/images/banner.png)] bg-no-repeat bg-center md:bg-cover h-[25rem] md:h-[43.75rem] relative overflow-x-hidden">
         <div
           className="absolute top-0 left-0 right-0 bottom-0"
           style={{

@@ -1,18 +1,39 @@
+"use client";
+
 import { londrinaSolid } from "@/configs/font-family";
 import { Dot } from "lucide-react";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import TourContent from "./tour-content";
+import { cn } from "@/lib/utils";
 
+const images = [
+  "/tours/images/tour-content.png",
+  "/tours/images/tour-1.png",
+  "/tours/images/tour-2.png",
+  "/tours/images/tour-3.png",
+  "/tours/images/tour-4.png",
+];
 const TourDetail = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const handleSlideChange = (index: number) => {
+    setCurrentImageIndex(index);
+  };
+
   return (
     <div className="py-[8.175rem] pl-[5rem] hidden md:flex items-center overflow-y-hidden">
       <Image
-        src={"/images/home/tour-2.png"}
+        src={images[currentImageIndex]}
         alt="tour"
         width={800}
         height={800}
-        className="w-[33.75rem] h-[42rem] object-contain"
+        className={cn(
+          `w-[33.75rem] h-[42rem] object-contain`,
+          images[currentImageIndex] === "/tours/images/tour-content.png"
+            ? "rounded-[1.5rem] mr-[2rem]"
+            : ""
+        )}
       />
       <div
         className="w-[70.5rem] h-[42rem] bg-[#FAFAFA] rounded-[2rem] py-[6.175rem] over pl-[2.125rem]"
@@ -58,8 +79,8 @@ const TourDetail = () => {
             </p>
           </div>
         </div>
-        <div className="h-full w-full overflow-hidden pr-[7.25rem] flex">
-          <TourContent />
+        <div className="h-full w-full overflow-hidden pr-[7.25rem] flex overflow-x-hidden">
+          <TourContent onSlideChange={handleSlideChange} />
         </div>
       </div>
     </div>
